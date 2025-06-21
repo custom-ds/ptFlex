@@ -55,3 +55,4 @@ eagle.epf
 
 *.kicad_sch-bak
 /firmware/ptSolar/.theia
+/ptFlex/ptFlex-backups
