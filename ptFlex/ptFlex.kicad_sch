@@ -7430,16 +7430,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 67.31) (xy 163.83 69.215)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "829acf2e-180a-4b14-b002-b3c09f62c1ac")
-	)
-	(wire
-		(pts
 			(xy 269.24 73.66) (xy 274.32 73.66)
 		)
 		(stroke
@@ -7647,16 +7637,6 @@
 			(type default)
 		)
 		(uuid "9b2dc532-c708-4a78-96e4-196c80b0c382")
-	)
-	(wire
-		(pts
-			(xy 163.83 69.215) (xy 163.195 69.215)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c5800bb-b7e1-4784-8c66-6ad71d9bff5d")
 	)
 	(wire
 		(pts
@@ -8047,16 +8027,6 @@
 			(type solid)
 		)
 		(uuid "c2005575-4497-4ef0-b79c-b6d6da491e14")
-	)
-	(wire
-		(pts
-			(xy 166.37 67.31) (xy 166.37 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c29cb4b9-faad-4871-b890-cf437104e5f0")
 	)
 	(wire
 		(pts
@@ -8570,17 +8540,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 67.31) (xy 168.91 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff75c390-5979-4653-aec3-39bdb35a93af")
-	)
-	(wire
-		(pts
-			(xy 123.19 76.2) (xy 168.91 76.2)
+			(xy 123.19 76.2) (xy 166.37 76.2)
 		)
 		(stroke
 			(width 0.1524)
@@ -11607,8 +11567,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 166.37 62.23 270)
-		(mirror x)
+		(at 171.45 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11616,15 +11575,15 @@
 		(dnp no)
 		(uuid "37076bae-e3ce-450a-9924-045acf5496ac")
 		(property "Reference" "J5"
-			(at 157.48 62.23 0)
+			(at 175.006 75.692 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "3 Pin Male Header"
-			(at 160.02 62.23 0)
+		(property "Value" "Programming"
+			(at 170.688 70.612 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11632,7 +11591,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 166.37 62.23 0)
+			(at 171.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11641,7 +11600,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 166.37 62.23 0)
+			(at 171.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11650,7 +11609,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 166.37 62.23 0)
+			(at 171.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11659,7 +11618,7 @@
 			)
 		)
 		(property "Digikey" "732-5316-ND"
-			(at 166.37 62.23 0)
+			(at 171.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11668,7 +11627,7 @@
 			)
 		)
 		(property "LSCC" ""
-			(at 166.37 62.23 0)
+			(at 171.45 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12324,73 +12283,6 @@
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
 					(reference "U6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 163.195 69.215 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4d2eab80-f2a0-43b1-95bc-c85fb10d5c31")
-		(property "Reference" "#SUPPLY024"
-			(at 163.195 69.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 161.163 70.739 0)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 163.195 69.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 163.195 69.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 163.195 69.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "29646163-7d37-4b4e-8a90-a0cc97c8221b")
-		)
-		(instances
-			(project "ptFlex"
-				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "#SUPPLY024")
 					(unit 1)
 				)
 			)
@@ -13410,6 +13302,73 @@
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 166.37 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "682210d8-cf4b-4dd4-a59d-54761c074a85")
+		(property "Reference" "#SUPPLY024"
+			(at 166.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 167.894 80.772 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 166.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5f5c88fc-edaf-4c18-b25c-dde61d4d94d4")
+		)
+		(instances
+			(project "ptFlex"
+				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
+					(reference "#SUPPLY024")
 					(unit 1)
 				)
 			)
