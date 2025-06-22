@@ -54,16 +54,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "CUI"
+			(property "Description" "12 mm, 5 V, 85 dB, Through Hole, Sealed, Magnetic Audio Transducer Buzzer"
 				(at 0 0 0)
 				(effects
 					(font
@@ -73,7 +64,7 @@
 					(hide yes)
 				)
 			)
-			(property "DESCRIPTION" "12 mm, 5 V, 85 dB, Through Hole, Sealed, Magnetic Audio Transducer Buzzer"
+			(property "MF" "CUI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -9697,7 +9688,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "06fd6452-75a6-46ee-91c2-615e9ea0ad54")
-		(property "Reference" "D6"
+		(property "Reference" "D3"
 			(at 60.96 140.0174 90)
 			(effects
 				(font
@@ -9751,15 +9742,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 57.15 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C2297 "
 			(at 57.15 139.7 0)
 			(effects
@@ -9767,14 +9749,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 57.15 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -9786,7 +9760,7 @@
 		(instances
 			(project ""
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "D6")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -9802,7 +9776,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0843f20f-67c7-4d9d-82c1-d45ada8e754a")
-		(property "Reference" "J6"
+		(property "Reference" "J1"
 			(at 153.67 177.8 0)
 			(effects
 				(font
@@ -9863,14 +9837,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 153.67 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "9f92b9c2-7b51-45ad-abd4-06c1a96100ea")
 		)
@@ -9883,7 +9849,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "J6")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -9964,7 +9930,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0bb3abb0-e98d-455f-949a-e8e909e1d105")
-		(property "Reference" "R11"
+		(property "Reference" "R19"
 			(at 354.33 138.4299 0)
 			(effects
 				(font
@@ -10018,15 +9984,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 351.79 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 351.79 139.7 0)
 			(effects
@@ -10034,14 +9991,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 351.79 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -10053,7 +10002,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R11")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -10265,7 +10214,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "128c9a66-888c-48af-937d-ef703df4e0e9")
-		(property "Reference" "Q3"
+		(property "Reference" "Q1"
 			(at 59.69 177.7999 0)
 			(effects
 				(font
@@ -10331,14 +10280,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 54.61 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "caf39d8f-7c08-4159-ac18-a5de6e20e956")
 		)
@@ -10351,7 +10292,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "Q3")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -10421,15 +10362,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 185.42 201.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 185.42 201.93 0)
 			(effects
@@ -10437,14 +10369,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 185.42 201.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -10539,7 +10463,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1997b98e-6cee-4a4e-8c6c-cd9a56e5c789")
-		(property "Reference" "R12"
+		(property "Reference" "R20"
 			(at 379.73 147.3199 0)
 			(effects
 				(font
@@ -10593,15 +10517,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 377.19 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 377.19 148.59 0)
 			(effects
@@ -10609,14 +10524,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 377.19 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -10628,7 +10535,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R12")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -11045,7 +10952,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "23ca3505-cb2b-49bd-a1c5-8a7245af8ada")
-		(property "Reference" "R22"
+		(property "Reference" "R10"
 			(at 143.51 86.3599 0)
 			(effects
 				(font
@@ -11099,15 +11006,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 140.97 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C95781"
 			(at 140.97 87.63 0)
 			(effects
@@ -11115,14 +11013,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 140.97 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11134,7 +11024,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R22")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -11150,7 +11040,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "25ec3fad-3d45-4079-af48-20fa30e90318")
-		(property "Reference" "Q1"
+		(property "Reference" "Q4"
 			(at 344.17 147.32 90)
 			(effects
 				(font
@@ -11205,15 +11095,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 344.17 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C40912 "
 			(at 344.17 140.97 0)
 			(effects
@@ -11221,14 +11102,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 344.17 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -11243,7 +11116,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "Q1")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -11258,7 +11131,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "28bf0d01-5850-41c5-b868-35d6ffbdd5a1")
-		(property "Reference" "C4"
+		(property "Reference" "C7"
 			(at 276.606 194.945 0)
 			(effects
 				(font
@@ -11313,15 +11186,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 275.59 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 275.59 195.58 0)
 			(effects
@@ -11329,14 +11193,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 275.59 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11348,7 +11204,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C4")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -11364,7 +11220,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2aa33c10-b23f-485e-9fcc-981849c71156")
-		(property "Reference" "C19"
+		(property "Reference" "C24"
 			(at 356.87 74.9299 0)
 			(effects
 				(font
@@ -11418,15 +11274,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 353.06 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C105173"
 			(at 353.06 76.2 0)
 			(effects
@@ -11434,14 +11281,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 353.06 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11453,7 +11292,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C19")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -11653,15 +11492,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 347.98 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C98996"
 			(at 347.98 67.31 0)
 			(effects
@@ -11669,14 +11499,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 347.98 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -11837,7 +11659,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36fe2f28-9da1-4d72-bc85-cc26469eac78")
-		(property "Reference" "R4"
+		(property "Reference" "R3"
 			(at 46.99 125.7299 0)
 			(effects
 				(font
@@ -11900,14 +11722,6 @@
 				(hide yes)
 			)
 		)
-		(property "DigiKey-PN" ""
-			(at 44.45 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "49dbd891-4b6c-4db5-b518-9611ef30a45c")
 		)
@@ -11917,7 +11731,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R4")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -11932,7 +11746,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37076bae-e3ce-450a-9924-045acf5496ac")
-		(property "Reference" "J5"
+		(property "Reference" "J2"
 			(at 175.006 75.692 0)
 			(effects
 				(font
@@ -11984,14 +11798,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 171.45 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "be458233-db15-4cda-a321-bd42ff6f0bbb")
 		)
@@ -12004,7 +11810,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "J5")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -12020,7 +11826,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3781dafd-4623-4813-b221-b2786a97f6ed")
-		(property "Reference" "U5"
+		(property "Reference" "U1"
 			(at 220.98 177.8 0)
 			(effects
 				(font
@@ -12094,7 +11900,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "U5")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -12177,7 +11983,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41bc4faa-41c7-4a4f-98ef-cfc29fa2d1a8")
-		(property "Reference" "C16"
+		(property "Reference" "C21"
 			(at 326.39 74.9299 0)
 			(effects
 				(font
@@ -12249,7 +12055,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C16")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -12331,7 +12137,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49a7b801-a213-421a-a6cd-34a6fc4cdc42")
-		(property "Reference" "J1"
+		(property "Reference" "J4"
 			(at 43.18 45.72 0)
 			(effects
 				(font
@@ -12383,23 +12189,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 44.45 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 44.45 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "4"
 			(uuid "8cae9bf9-5c3b-4508-b80d-4863dbfb558e")
 		)
@@ -12421,7 +12210,7 @@
 		(instances
 			(project ""
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "J1")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -12436,7 +12225,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49eff4ac-2c25-4279-9daf-25d090902ada")
-		(property "Reference" "C10"
+		(property "Reference" "C13"
 			(at 365.506 194.945 0)
 			(effects
 				(font
@@ -12491,15 +12280,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 364.49 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 364.49 195.58 0)
 			(effects
@@ -12507,14 +12287,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 364.49 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -12526,7 +12298,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C10")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -12605,14 +12377,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 107.95 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "6"
 			(uuid "51b290ce-3934-40ce-bbcf-6e25e47f2ba8")
 		)
@@ -12655,7 +12419,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4f717de0-a97d-4148-bd00-0971740cd3bb")
-		(property "Reference" "R3"
+		(property "Reference" "R2"
 			(at 175.26 204.724 0)
 			(effects
 				(font
@@ -12728,7 +12492,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R3")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -13012,7 +12776,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5994fda4-7177-475c-8552-60bdf6aaa379")
-		(property "Reference" "J4"
+		(property "Reference" "J3"
 			(at 160.02 148.5901 0)
 			(effects
 				(font
@@ -13075,14 +12839,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 157.48 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "4"
 			(uuid "2bb73ffb-da30-40bc-97ac-f9946cc21b03")
 		)
@@ -13098,7 +12854,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "J4")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -13113,7 +12869,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60efac43-f524-4179-b1da-7568e80fffa0")
-		(property "Reference" "C23"
+		(property "Reference" "C5"
 			(at 256.286 194.945 0)
 			(effects
 				(font
@@ -13177,14 +12933,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 255.27 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "acddc79b-f172-4a26-aedc-3ebd21f0a56a")
 		)
@@ -13194,7 +12942,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C23")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -13209,7 +12957,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "62ca4593-3f98-4b0c-aa35-3d54184f49a1")
-		(property "Reference" "C12"
+		(property "Reference" "C19"
 			(at 308.356 122.555 0)
 			(effects
 				(font
@@ -13273,14 +13021,6 @@
 				(hide yes)
 			)
 		)
-		(property "DigiKey-PN" ""
-			(at 307.34 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "555f1c20-b417-4fef-8777-70ce996e0f39")
 		)
@@ -13290,7 +13030,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C12")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -13306,7 +13046,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "644d674e-0eb2-4756-85dc-a68d633bbdbb")
-		(property "Reference" "Q2"
+		(property "Reference" "Q5"
 			(at 386.08 156.21 90)
 			(effects
 				(font
@@ -13361,15 +13101,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 386.08 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C40912 "
 			(at 386.08 149.86 0)
 			(effects
@@ -13377,14 +13108,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 386.08 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -13399,7 +13122,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "Q2")
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -13479,7 +13202,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "666d0516-85ff-4199-bc72-7173f72dc30d")
-		(property "Reference" "U2"
+		(property "Reference" "U3"
 			(at 92.71 22.098 0)
 			(effects
 				(font
@@ -13541,6 +13264,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "11"
@@ -13642,7 +13366,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "U2")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -13893,7 +13617,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "71a1bf51-9750-4092-9219-1b5cc8a93b06")
-		(property "Reference" "R9"
+		(property "Reference" "R7"
 			(at 147.066 132.588 0)
 			(effects
 				(font
@@ -13947,15 +13671,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 140.97 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C60816"
 			(at 140.97 134.62 0)
 			(effects
@@ -13963,14 +13678,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 140.97 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -13982,7 +13689,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R9")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -13997,7 +13704,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "725824ae-d78c-4bac-bada-28bd4af4fe0f")
-		(property "Reference" "R19"
+		(property "Reference" "R16"
 			(at 278.13 71.374 90)
 			(effects
 				(font
@@ -14067,7 +13774,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R19")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -14083,7 +13790,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "76e77018-77aa-4f31-b64e-c1e740263f30")
-		(property "Reference" "Q4"
+		(property "Reference" "Q2"
 			(at 255.27 86.3599 0)
 			(effects
 				(font
@@ -14140,15 +13847,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 250.19 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C81464"
 			(at 250.19 87.63 0)
 			(effects
@@ -14156,14 +13854,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 250.19 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -14178,7 +13868,7 @@
 		(instances
 			(project ""
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "Q4")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -14261,7 +13951,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7cef0ced-3acf-47f4-914b-7ea541c9edf5")
-		(property "Reference" "R17"
+		(property "Reference" "R14"
 			(at 241.3 81.28 90)
 			(effects
 				(font
@@ -14313,15 +14003,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 241.3 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C95781"
 			(at 241.3 87.63 0)
 			(effects
@@ -14329,14 +14010,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 241.3 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -14348,7 +14021,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R17")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -14496,7 +14169,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "829a2449-3595-4b9b-ba42-dc486a8b135f")
-		(property "Reference" "R13"
+		(property "Reference" "R21"
 			(at 396.24 147.3199 0)
 			(effects
 				(font
@@ -14550,15 +14223,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 393.7 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 393.7 148.59 0)
 			(effects
@@ -14566,14 +14230,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 393.7 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -14585,7 +14241,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R13")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -14667,7 +14323,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "83f315b5-259c-41bf-b9c3-a1aef6afd598")
-		(property "Reference" "U3"
+		(property "Reference" "U5"
 			(at 298.0533 54.61 0)
 			(effects
 				(font
@@ -14778,7 +14434,7 @@
 		(instances
 			(project ""
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "U3")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -14794,7 +14450,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "84c9cdc3-4848-41b5-89b3-27ea565c466f")
-		(property "Reference" "R20"
+		(property "Reference" "R11"
 			(at 224.79 107.9499 0)
 			(effects
 				(font
@@ -14848,15 +14504,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 222.25 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 222.25 109.22 0)
 			(effects
@@ -14864,14 +14511,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 222.25 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -14883,7 +14522,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R20")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -15098,7 +14737,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f70f5af-a578-45b7-a539-ee64d27d9e1d")
-		(property "Reference" "C7"
+		(property "Reference" "C10"
 			(at 333.756 200.025 0)
 			(effects
 				(font
@@ -15153,15 +14792,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 332.74 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 332.74 200.66 0)
 			(effects
@@ -15169,14 +14799,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 332.74 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -15188,7 +14810,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C7")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -15203,7 +14825,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f736aeb-e1c1-4a41-abc5-5ca9bfd13972")
-		(property "Reference" "C14"
+		(property "Reference" "C18"
 			(at 260.985 99.314 0)
 			(effects
 				(font
@@ -15258,15 +14880,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 261.62 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C28323"
 			(at 261.62 100.33 0)
 			(effects
@@ -15274,14 +14887,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 261.62 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -15293,7 +14898,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C14")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -15375,7 +14980,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "95d96882-f6f3-4683-8b58-4733891db1bb")
-		(property "Reference" "C5"
+		(property "Reference" "C8"
 			(at 286.766 194.945 0)
 			(effects
 				(font
@@ -15430,15 +15035,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 285.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 285.75 195.58 0)
 			(effects
@@ -15446,14 +15042,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 285.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -15465,7 +15053,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C5")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -15480,7 +15068,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9751a9cd-8270-459d-9ee1-e6663b6bc751")
-		(property "Reference" "C3"
+		(property "Reference" "C6"
 			(at 266.446 194.945 0)
 			(effects
 				(font
@@ -15535,15 +15123,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 265.43 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 265.43 195.58 0)
 			(effects
@@ -15551,14 +15130,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 265.43 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -15570,7 +15141,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C3")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -15586,7 +15157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9965a3a9-08b1-4378-bfd7-cafc4afa83f7")
-		(property "Reference" "C21"
+		(property "Reference" "C3"
 			(at 240.03 193.6749 0)
 			(effects
 				(font
@@ -15631,7 +15202,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "399-C0805C476M9PACTUCT-ND"
 			(at 236.22 195.58 0)
 			(effects
 				(font
@@ -15640,21 +15211,13 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C16780"
 			(at 236.22 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LSCC" ""
-			(at 236.22 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -15666,7 +15229,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C21")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -15743,14 +15306,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LSCC" ""
-			(at 204.47 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -15845,7 +15400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a501f342-4088-4ba1-ba36-ff40b87c0cb1")
-		(property "Reference" "D5"
+		(property "Reference" "D2"
 			(at 48.26 140.0174 90)
 			(effects
 				(font
@@ -15899,15 +15454,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 44.45 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C2295"
 			(at 44.45 139.7 0)
 			(effects
@@ -15915,14 +15461,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 44.45 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -15934,7 +15472,7 @@
 		(instances
 			(project ""
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "D5")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -16069,15 +15607,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 327.66 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C98996"
 			(at 327.66 67.31 0)
 			(effects
@@ -16085,14 +15614,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 327.66 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -16120,7 +15641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "acc28215-444a-45d1-ac86-362a97b2f49f")
-		(property "Reference" "C17"
+		(property "Reference" "C22"
 			(at 336.55 74.9299 0)
 			(effects
 				(font
@@ -16174,15 +15695,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 332.74 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C541518"
 			(at 332.74 76.2 0)
 			(effects
@@ -16190,14 +15702,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 332.74 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -16209,7 +15713,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C17")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -16289,7 +15793,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3242474-f9a9-4bf2-b268-c52dc277d6da")
-		(property "Reference" "C9"
+		(property "Reference" "C12"
 			(at 354.076 194.945 0)
 			(effects
 				(font
@@ -16344,15 +15848,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 353.06 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 353.06 195.58 0)
 			(effects
@@ -16360,14 +15855,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 353.06 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -16379,7 +15866,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C9")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -16395,7 +15882,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b35fc0ec-579c-4b49-87ee-a864aa674245")
-		(property "Reference" "R18"
+		(property "Reference" "R15"
 			(at 255.27 77.4699 0)
 			(effects
 				(font
@@ -16449,15 +15936,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 252.73 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 252.73 78.74 0)
 			(effects
@@ -16465,14 +15943,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 252.73 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -16484,7 +15954,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R18")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -16500,7 +15970,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4f7566d-3abe-4a6c-a3ff-69d7e8a6fbf5")
-		(property "Reference" "R8"
+		(property "Reference" "R6"
 			(at 135.89 133.3499 0)
 			(effects
 				(font
@@ -16554,15 +16024,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 138.43 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C60816"
 			(at 138.43 134.62 0)
 			(effects
@@ -16570,14 +16031,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 138.43 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -16589,7 +16042,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R8")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -16605,7 +16058,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b561015d-3fb7-43c6-b1e7-d6f9818e4b8b")
-		(property "Reference" "R10"
+		(property "Reference" "R18"
 			(at 337.82 138.4299 0)
 			(effects
 				(font
@@ -16659,15 +16112,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 335.28 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 335.28 139.7 0)
 			(effects
@@ -16675,14 +16119,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 335.28 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -16694,7 +16130,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R10")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -16710,7 +16146,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8642a6a-d58c-4dfc-a577-21642d67bf54")
-		(property "Reference" "R5"
+		(property "Reference" "R4"
 			(at 59.69 125.7299 0)
 			(effects
 				(font
@@ -16773,14 +16209,6 @@
 				(hide yes)
 			)
 		)
-		(property "DigiKey-PN" ""
-			(at 57.15 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "04b76e18-7906-4551-8d6e-387581cb84ae")
 		)
@@ -16790,7 +16218,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R5")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -16805,7 +16233,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b8d92336-d513-4e94-be28-21b4e09a297c")
-		(property "Reference" "Q5"
+		(property "Reference" "Q3"
 			(at 337.312 116.332 90)
 			(effects
 				(font
@@ -16871,14 +16299,6 @@
 				(hide yes)
 			)
 		)
-		(property "DigiKey-PN" ""
-			(at 332.74 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "3"
 			(uuid "4a8f41f9-9ea6-4c1b-9af8-35b84e5e0990")
 		)
@@ -16891,7 +16311,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "Q5")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -16906,7 +16326,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bb232db5-c6c3-42ac-8ccc-59559514ca15")
-		(property "Reference" "C11"
+		(property "Reference" "C14"
 			(at 375.666 194.945 0)
 			(effects
 				(font
@@ -16961,15 +16381,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 374.65 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 374.65 195.58 0)
 			(effects
@@ -16977,14 +16388,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 374.65 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -16996,7 +16399,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C11")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -17011,7 +16414,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc36c970-c7c0-40c4-8fb4-36567436d33b")
-		(property "Reference" "C13"
+		(property "Reference" "C25"
 			(at 77.216 33.655 0)
 			(effects
 				(font
@@ -17066,15 +16469,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 76.2 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 76.2 34.29 0)
 			(effects
@@ -17082,14 +16476,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 76.2 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -17101,7 +16487,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C13")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -17172,23 +16558,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 367.03 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 367.03 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "8efdf0b4-0421-4efa-b3ed-e801c5eb5c93")
 		)
@@ -17213,7 +16582,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bccc81d7-2f0b-4d25-bea1-31724c72a263")
-		(property "Reference" "C15"
+		(property "Reference" "C17"
 			(at 246.126 108.585 0)
 			(effects
 				(font
@@ -17268,15 +16637,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 245.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 245.11 109.22 0)
 			(effects
@@ -17284,14 +16644,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 245.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -17303,7 +16655,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C15")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -17373,15 +16725,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 320.04 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 320.04 123.19 0)
 			(effects
@@ -17389,14 +16732,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 320.04 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -17423,7 +16758,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c0b1a320-1e2e-460d-bf1e-22a90b48b6a4")
-		(property "Reference" "C25"
+		(property "Reference" "C15"
 			(at 384.556 194.945 0)
 			(effects
 				(font
@@ -17478,15 +16813,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 383.54 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 383.54 195.58 0)
 			(effects
@@ -17494,14 +16820,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 383.54 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -17513,7 +16831,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C25")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -17528,7 +16846,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c2df43f2-3011-4405-ae1b-da87541d5a0e")
-		(property "Reference" "C22"
+		(property "Reference" "C4"
 			(at 248.666 194.945 0)
 			(effects
 				(font
@@ -17592,14 +16910,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 247.65 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "6f0f730f-f28f-435c-a25f-fd0dba4a8836")
 		)
@@ -17609,7 +16919,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C22")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -17624,7 +16934,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3676b29-78a0-422e-8fe8-d01679ddcaed")
-		(property "Reference" "C6"
+		(property "Reference" "C9"
 			(at 295.656 194.945 0)
 			(effects
 				(font
@@ -17679,15 +16989,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 294.64 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C83170"
 			(at 294.64 195.58 0)
 			(effects
@@ -17695,14 +16996,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 294.64 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -17714,7 +17007,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C6")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -17730,7 +17023,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c426523c-5af5-4805-bf55-68eda5555fef")
-		(property "Reference" "R6"
+		(property "Reference" "R8"
 			(at 138.43 45.7199 0)
 			(effects
 				(font
@@ -17784,15 +17077,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 135.89 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C107700"
 			(at 135.89 46.99 0)
 			(effects
@@ -17800,14 +17084,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 135.89 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -17819,7 +17095,7 @@
 		(instances
 			(project ""
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R6")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -17834,7 +17110,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c80028c7-a344-48a0-bac7-36fe148918ad")
-		(property "Reference" "C24"
+		(property "Reference" "C16"
 			(at 147.066 154.305 0)
 			(effects
 				(font
@@ -17898,14 +17174,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 146.05 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "e845ec86-e655-4044-9bad-114ff6dfd8cd")
 		)
@@ -17915,7 +17183,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C24")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -17983,15 +17251,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 337.82 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C75652"
 			(at 337.82 67.31 0)
 			(effects
@@ -17999,14 +17258,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 337.82 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -18201,7 +17452,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d222fddd-9078-4484-a1ac-ffca617e0ed8")
-		(property "Reference" "R7"
+		(property "Reference" "R9"
 			(at 138.43 63.4999 0)
 			(effects
 				(font
@@ -18255,15 +17506,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 140.97 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 140.97 64.77 0)
 			(effects
@@ -18271,14 +17513,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 140.97 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -18290,7 +17524,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R7")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -18305,7 +17539,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d2b24f8f-fca1-4df7-acea-c9e8fb5669d1")
-		(property "Reference" "U1"
+		(property "Reference" "U2"
 			(at 309.88 180.086 0)
 			(effects
 				(font
@@ -18360,15 +17594,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 317.5 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C108877"
 			(at 317.5 189.23 0)
 			(effects
@@ -18376,14 +17601,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 317.5 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -18404,7 +17621,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "U1")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -18420,7 +17637,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d2bd245e-4eb7-4260-8c10-859fe18f9f48")
-		(property "Reference" "C18"
+		(property "Reference" "C23"
 			(at 346.71 74.9299 0)
 			(effects
 				(font
@@ -18474,15 +17691,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 342.9 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C541518"
 			(at 342.9 76.2 0)
 			(effects
@@ -18490,14 +17698,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 342.9 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -18509,7 +17709,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C18")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -18525,7 +17725,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3cc7b5f-5bc8-4ae0-8c17-e8651b32f0c0")
-		(property "Reference" "R21"
+		(property "Reference" "R12"
 			(at 224.79 120.6499 0)
 			(effects
 				(font
@@ -18579,15 +17779,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 222.25 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 222.25 121.92 0)
 			(effects
@@ -18595,14 +17786,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 222.25 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -18614,7 +17797,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R21")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -18696,7 +17879,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dd05f279-7dc1-4f86-bd95-3cfb6753934b")
-		(property "Reference" "D1"
+		(property "Reference" "D4"
 			(at 59.69 166.3699 90)
 			(effects
 				(font
@@ -18786,7 +17969,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "D1")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -18864,14 +18047,6 @@
 				(hide yes)
 			)
 		)
-		(property "DigiKey-PN" ""
-			(at 151.13 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "45973308-0f3c-4bd4-8c16-207d74663c71")
 		)
@@ -18900,7 +18075,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dff9bfe8-9f81-4a35-8980-9da2564d077d")
-		(property "Reference" "R16"
+		(property "Reference" "R13"
 			(at 236.22 93.98 90)
 			(effects
 				(font
@@ -18952,15 +18127,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 236.22 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C60816"
 			(at 236.22 100.33 0)
 			(effects
@@ -18968,14 +18134,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 236.22 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -18987,7 +18145,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R16")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -19070,7 +18228,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2173a38-8bde-4cc6-9a99-e28d67fbff1c")
-		(property "Reference" "D4"
+		(property "Reference" "D1"
 			(at 170.4975 180.34 0)
 			(effects
 				(font
@@ -19124,15 +18282,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 170.18 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C22364900"
 			(at 170.18 184.15 0)
 			(effects
@@ -19140,14 +18289,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 170.18 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -19159,7 +18300,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "D4")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -19375,7 +18516,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee762552-95df-4bb7-97f1-20ba14962463")
-		(property "Reference" "R1"
+		(property "Reference" "R5"
 			(at 45.72 172.72 90)
 			(effects
 				(font
@@ -19436,14 +18577,6 @@
 				(hide yes)
 			)
 		)
-		(property "LSCC" ""
-			(at 45.72 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "25bcdde3-ee0e-40a2-8649-4e17d307b4e0")
 		)
@@ -19453,7 +18586,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R1")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -19469,7 +18602,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f10adcfc-acdf-4108-8168-e029347e2ed3")
-		(property "Reference" "R23"
+		(property "Reference" "R17"
 			(at 346.71 121.9199 0)
 			(effects
 				(font
@@ -19523,15 +18656,6 @@
 				(hide yes)
 			)
 		)
-		(property "Field6" ""
-			(at 344.17 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "LCSC" "C110775"
 			(at 344.17 123.19 0)
 			(effects
@@ -19539,14 +18663,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "DigiKey-PN" ""
-			(at 344.17 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "2"
@@ -19558,7 +18674,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R23")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -19573,7 +18689,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f8972f78-fc0f-4efa-919c-1a4ff8a365ff")
-		(property "Reference" "R2"
+		(property "Reference" "R1"
 			(at 184.658 191.008 0)
 			(effects
 				(font
@@ -19646,7 +18762,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "R2")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -19662,7 +18778,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fecf313b-c6d7-4889-83cb-2492ff3e91d4")
-		(property "Reference" "C8"
+		(property "Reference" "C11"
 			(at 345.44 193.6749 0)
 			(effects
 				(font
@@ -19734,7 +18850,7 @@
 		(instances
 			(project "ptFlex"
 				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "C8")
+					(reference "C11")
 					(unit 1)
 				)
 			)
