@@ -96,7 +96,7 @@ class Modem {
     static const uint16_t BAUD_GENERATOR_COUNT = 22;
     static const uint16_t COURTESY_TONE_COUNT = 4000;
 
-    static const uint16_t TIMER1_OCR = 303;
+    static const uint16_t TIMER1_OCR = 606;
     static const uint16_t TONE_HIGH_STEPS_PER_TICK = 5461;		//2200Hz Tone
     static const uint16_t TONE_LOW_STEPS_PER_TICK = 2979; 		//1200Hz Tone
     static const uint16_t TONE_COURTESY_STEPS_PER_TICK = 4220; 		//1700Hz Courtesy Tone

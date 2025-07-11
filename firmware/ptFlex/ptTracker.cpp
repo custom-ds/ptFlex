@@ -133,9 +133,9 @@ float ptTracker::readBatteryVoltage(bool bSerialOut) {
 
     //Compensate for the resistor divider on the battery voltage measurement circuit
     // TotalResistance / BottomResistor
-    // Top: 100k, Bottom: 22k, Total: 122k
-    // 122k / 22k = 5.545
-    fVolts = fVolts * 5.545;        //times (122/22) to adjust for the resistor divider (5.545)
+    // Top: 150k, Bottom: 10k, Total: 160k
+    // 160k / 10k = 16.0
+    fVolts = fVolts * 16.0;        //times (160/10) to adjust for the resistor divider (16.0)
 
     //If you want to compensate for a diode drop, add it back here, in Volts.
     //  fVolts = fVolts + 0.19;

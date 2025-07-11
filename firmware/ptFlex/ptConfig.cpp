@@ -65,7 +65,7 @@ void ptConfig::setDefaultConfig() {
     this->_config.DisablePathAboveAltitude = 2000;
     this->_config.Symbol = 'O';    //letter O for balloons
     this->_config.SymbolPage = '/';
-    this->_config.BeaconType = 4;    //Solar (voltgage) delay
+    this->_config.BeaconType = 3;    //Altitude-based delay
     this->_config.BeaconSimpleDelay = 30;
     this->_config.BeaconSpeedThreshLow = 20;
     this->_config.BeaconSpeedThreshHigh = 50;
@@ -97,12 +97,12 @@ void ptConfig::setDefaultConfig() {
     this->_config.GPSSerialBaud = 5;    //1=300, 2=1200, 3=2400, 4=4800, 5=9600, 6=19200
     this->_config.GPSSerialInvert = 0;    //Invert the incoming signal
     this->_config.GPSType = 2;      //0=Generic NMEA, 1=UBlox, 2=ATGM332D
-    this->_config.AnnounceMode = 1;
+    this->_config.AnnounceMode = 2;    //0=No Annunciations, 1=LED, 2=LED and Piezo
 
-    this->_config.I2cBME280 = 0;    //initialize the BME280
-    this->_config.UseGlobalFreq = 1;    //use the global frequency database based on position
-    this->_config.DisableGPSDuringXmit = 1;    //disable the GPS during transmission (to save power)
-    this->_config.HourlyReboot = 1;    //reboot the system every hour
+    this->_config.I2cBME280 = 1;    //initialize the BME280
+    this->_config.UseGlobalFreq = 0;    //use the global frequency database based on position
+    this->_config.DisableGPSDuringXmit = 0;    //disable the GPS during transmission (to save power)
+    this->_config.HourlyReboot = 0;    //reboot the system every hour
 
     this->_config.VoltThreshGPS = 3500;    //3.5V
     this->_config.VoltThreshXmit = 4100;    //4.1V

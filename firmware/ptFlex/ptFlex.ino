@@ -1,5 +1,5 @@
 /*
-Project: Traveler ptSolar Firmware
+Project: Traveler pfFlex Firmware
 Copyright 2011-2025 - Zack Clobes (W0ZC), Custom Digital Services, LLC
 
 
@@ -20,7 +20,7 @@ Before programming for the first time, the ATmega fuses must be set.
 */
 
 
-#define FIRMWARE_VERSION "1.1.0"
+#define FIRMWARE_VERSION "1.1.1"
 #define CONFIG_PROMPT "\n\n# "
 
 
