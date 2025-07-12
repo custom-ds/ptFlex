@@ -1,6 +1,6 @@
 /*
 GPS Data Parser for Project: Traveler Flight Controllers
-Copywrite 2011-2019 - Zack Clobes (W0ZC), Custom Digital Services, LLC
+Copywrite 2011-2025 - Zack Clobes (W0ZC), Custom Digital Services, LLC
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -20,8 +20,14 @@ You should have received a copy of the GNU General Public License along with thi
 #include <SoftwareSerial.h>
 
 #define _MAX_SENTENCE_LEN 88
+// Maximum length of the latitude string is 11 characters (ddmm.mmmmmm) plus null terminator, so 12. But APRS protocol requires 7 characters (ddmm.mm) plus null terminator, so 8.
 #define _MAX_LATITUDE_LEN 12
+#define _MAX_LATITUDE_XMIT_LEN 8
+
+// Maximum length of the longitude string is 12 characters (dddmm.mmmmmm) plus null terminator, so 13. But APRS protocol requires 8 characters (dddmm.mm) plus null terminator, so 9.
 #define _MAX_LONGITUDE_LEN 13
+#define _MAX_LONGITUDE_XMIT_LEN 9
+
 #define _METERS_TO_FEET 3.2808399
 #define GPS_MAX_COLLECTION_TIME 3000    //number of millis to wait while collecting the two GPS strings.
 
@@ -121,23 +127,17 @@ class GPS
     }
     
     inline bool gotNewRMC() { return _bGotNewRMC; }
-    
     inline bool gotNewGGA() { return _bGotNewGGA; }
-    
     inline unsigned long getLastDecodedMillis() { return _lastDecodedMillis; }
-    
     inline void setDebugNEMA(bool output) { _outputNEMA = output; }
+
     void setDebugLevel(uint8_t level) { _debugLevel = level; }
-    void setGPSType(uint8_t type) { _GPSType = type; }
-
-
-  
     bool getAPRSFrequency(char *sz);
 
 	private:
 		void parseGGA();
 		void parseRMC();
-		bool validateGPSSentence(char *szGPSSentence, int iNumCommas, int iMinLength);
+		//bool validateGPSSentence(char *szGPSSentence, int iNumCommas, int iMinLength);
 		void getString(char *ptrHaystack, char *ptrFound, int iMaxLength);
 	  char* skipToNext(char *ptr);
     uint8_t getPinMode(uint8_t pin);
@@ -171,7 +171,6 @@ class GPS
 		bool _bFoundStart;
 
     uint8_t _debugLevel;
-    uint8_t _GPSType;    //0=Generic NMEA, 1=UBlox, 2=ATGM332D
 
 
 	};

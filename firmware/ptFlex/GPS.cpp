@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 2.1.0 - July 12, 2025 - Removed support for older uBlox GPS. Fixed bug where GPS was returning excessive precision. Eliminated validateGPSEntence() function.
 Version 2.0.0 - May 9, 2025 - Major rewrite to be more object oriented. Added support for ATGM332 GPS module.
 Version 1.0.4 - October 18, 2015 - Found bug where GPS latitude and longitude were exceeding the buffer.  Corrected and cleaned up some old code.
 Version 1.0.3 - October 7, 2015 - Eliminated excess Serial.print's.  Cleaned up old comments.
@@ -54,7 +55,6 @@ GPS::GPS(uint8_t pinGPSRx, uint8_t pinGPSTx, uint8_t pinGPSEnable) {
 	this->_fAltitude = 0.0;
 	this->_fKnots = 0.0;
 	this->_fCourse = 0.0;
-	this->_GPSType = 0;	//0=Generic NMEA, 1=UBlox, 2=ATGM332D
 
 	this->_lastDecodedMillis = millis();
 	this->_outputNEMA = false;
@@ -74,6 +74,7 @@ void GPS::initGPS() {
 	GPS->begin(9600);
 	delay(500);
 
+	/*
 	// UBlox GPS - set the GPS to high altitude mode (Dynamic Model 6 – Airborne < 1g)
 	if (this->_GPSType == 1) {
 		if (this->_debugLevel > 0) Serial.println(F("Init UBlox"));
@@ -135,20 +136,19 @@ void GPS::initGPS() {
 			}
 		}
 	}
-
+	*/
 
 	// ATGM332D GPS - set the GPS to high altitude mode and disable unnecessary NMEA sentences
-	if (this->_GPSType == 2) {
-		if (this->_debugLevel > 0) Serial.println(F("Init ATGM332"));
+	if (this->_debugLevel > 0) Serial.println(F("Init ATGM332"));
 
-		if (this->_debugLevel > 0) Serial.println(F("Config GGA/RMC"));
-		GPS->println(F("$PCAS03,1,0,0,0,1,0,0,0,0*1E")); // turns on only $GNGGA and $GNRMC (1 sec)
-		delay(100);
+	if (this->_debugLevel > 0) Serial.println(F("Config GGA/RMC"));
+	GPS->println(F("$PCAS03,1,0,0,0,1,0,0,0,0*1E")); // turns on only $GNGGA and $GNRMC (1 sec)
+	delay(100);
 
-		if (this->_debugLevel > 1) Serial.println(F("Enable air"));
-		GPS->println(F("$PCAS11,5*18")); // Airborne mode on ATM336H-5N GPS??
-		delay(100);		
-	}
+	if (this->_debugLevel > 1) Serial.println(F("Enable air"));
+	GPS->println(F("$PCAS11,5*18")); // Airborne mode on ATM336H-5N GPS??
+	delay(100);		
+	
 
 	
 	
@@ -322,8 +322,8 @@ void GPS::addChar(char c) {
 				Serial.flush();
 				this->_bRMCComplete = true;    //set a flag indicating that an RMC sentence has been received, therefore we have valid data
 
-				Serial.println(F("Validating RMC"));
-				this->validateGPSSentence(this->_szTemp, 13, 23);	//validate the GGA sentence to make sure it has the right number of commas and is long enough
+				//Serial.println(F("Validating RMC"));
+				//this->validateGPSSentence(this->_szTemp, 13, 23);	//validate the GGA sentence to make sure it has the right number of commas and is long enough
 				this->parseRMC();
 
 				this->_bGotNewRMC = true;      //set a temporary flag indicating that we got a new RMC sentence
@@ -336,8 +336,8 @@ void GPS::addChar(char c) {
 				Serial.flush();
 				this->_bGGAComplete = true;
 
-				Serial.println(F("Validating GGA"));
-				this->validateGPSSentence(this->_szTemp, 14, 30);	//validate the GGA sentence to make sure it has the right number of commas and is long enough
+				//Serial.println(F("Validating GGA"));
+				//this->validateGPSSentence(this->_szTemp, 14, 30);	//validate the GGA sentence to make sure it has the right number of commas and is long enough
 				this->parseGGA();
 
 				this->_bGotNewGGA = true;      //set a temporary flag indicating that we got a new RMC sentence
@@ -567,6 +567,7 @@ void GPS::getString(char *ptrHaystack, char *ptrFound, int iMaxLength) {
  * @return: True if the sentence is valid, false otherwise.
  * @note    This function checks to make sure we have a string that is null terminated, has the appropriate # of commas, and has valid chars within it.
  */
+/*
 bool GPS::validateGPSSentence(char *szGPSSentence, int iNumCommas, int iMinLength) {
 	//checks to make sure we have a string that is null terminated, has the appropriate # of commas, and has valid chars within it
 	// Pass it the string to test, and the number of commas that should be included for this type of string
@@ -592,7 +593,7 @@ bool GPS::validateGPSSentence(char *szGPSSentence, int iNumCommas, int iMinLengt
 	//we passed all of the tests - return true
 	return true;
 }
-
+*/
 
 /**
  * @brief   Skips to the next comma or null character in the string.
@@ -648,14 +649,14 @@ uint8_t GPS::getPinMode(uint8_t pin) {
  * @brief   Returns the current latitude in the form of a string.
  * @param   sz: A pointer to a char array to store the latitude in.
  * @return: None.
- * @note    The function will return the latitude in the format ddmm.mmmm, where dd is degrees and mm.mmmm is minutes.  The string will be null terminated.
+ * @note    The function will return the latitude in the format ddmm.mm, where dd is degrees and mm.mm is minutes.  The string will be null terminated.
  */
 void GPS::getLatitude(char *sz) {
   byte i = 0;
   sz[0] = 0x00;   //always make sure we return null if no valid data in the source
 
   if (this->_bGGAComplete || this->_bRMCComplete) {
-    while(this->_szLatitude[i] > 0x00 && i < _MAX_LATITUDE_LEN) {
+    while(this->_szLatitude[i] > 0x00 && i < _MAX_LATITUDE_XMIT_LEN) {
       sz[i] = this->_szLatitude[i];
       i++;
       sz[i] = 0x00;   //always null terminate the end
@@ -668,14 +669,14 @@ void GPS::getLatitude(char *sz) {
  * @brief   Returns the current longitude in the form of a string.
  * @param   sz: A pointer to a char array to store the longitude in.
  * @return: None.
- * @note    The function will return the latitude in the format dddmm.mmmm, where ddd is degrees and mm.mmmm is minutes.  The string will be null terminated.
+ * @note    The function will return the latitude in the format dddmm.mm, where ddd is degrees and mm.mm is minutes.  The string will be null terminated.
  */
 void GPS::getLongitude(char *sz) {
   byte i = 0;
   sz[0] = 0x00;   //always make sure we return null if no valid data in the source
 
   if (this->_bGGAComplete || this->_bRMCComplete) {
-    while(this->_szLongitude[i] > 0x00 && i < _MAX_LONGITUDE_LEN) {
+    while(this->_szLongitude[i] > 0x00 && i < _MAX_LONGITUDE_XMIT_LEN) {
       sz[i] = this->_szLongitude[i];
       i++;
       sz[i] = 0x00;   //always null terminate the end

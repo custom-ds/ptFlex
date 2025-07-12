@@ -20,7 +20,7 @@ Before programming for the first time, the ATmega fuses must be set.
 */
 
 
-#define FIRMWARE_VERSION "1.1.1"
+#define FIRMWARE_VERSION "1.5.0"
 #define CONFIG_PROMPT "\n\n# "
 
 
@@ -128,7 +128,6 @@ void setup() {
   
   GPSParser.setDebugNEMA(true);    ///TODO: Need to pull this from Configuration
   GPSParser.setDebugLevel(2);    //Get full verbose output from the GPS
-  GPSParser.setGPSType(2);    //Set the GPS type to ATGM332D
 }
 
 
@@ -148,9 +147,9 @@ void loop() {
 
 
   wdt_reset();
-  Serial.println("");
-  Serial.print(F("Loop: "));
-  Serial.println(millis());
+  // Serial.println("");
+  // Serial.print(F("Loop: "));
+  // Serial.println(millis());
   
   //Check to see if we have a command from the serial port to indicate that we need to enter config mode
   if (Serial.available()) {
@@ -590,7 +589,6 @@ void doConfigMode() {
         Serial.println(F("2. - 10s"));
         Serial.println(F("3. - 30s"));
         Serial.println(F("4. - 60s"));
-        Serial.println(F("5. - 120s"));
 
         while (!Serial.available()) {
           //Wait for an input
@@ -623,10 +621,6 @@ void doConfigMode() {
             Serial.println(F("60s"));
             delay(60000);
             break;
-          case '5':
-            Serial.println(F("120s"));
-            delay(120000);
-            break;
           default:
             Serial.println(F("Unk"));
           }
@@ -652,14 +646,15 @@ void doConfigMode() {
 
       if (byTemp == 'Q' || byTemp == 'q') {
         //Quit the config mode
-        Serial.println(F("Rebooting..."));
-        Tracker.reboot();
+        reboot();
       }
 
 
       if (byTemp == 'R' || byTemp == 'r') {
         Config.readEEPROM();    //pull the configs from eeprom
         Config.sendConfigToPC();
+
+        reboot();    //reboot the system while we're waiting for a new config to be loaded        
       }
 
 
@@ -688,18 +683,28 @@ void doConfigMode() {
           //something failed during the read of the config data
           Serial.println(F(" failed"));
         }
+
+        reboot();    //reboot the system to apply the new configuration
       }
 
       Serial.print(CONFIG_PROMPT);
       ulUntil = millis() + 600000;    //reset the timer for the config mode
     }
   }
-  Serial.println(F("Rebooting..."));
-  Serial.flush();
-  delay(200);
-  Tracker.reboot();  
+  reboot();    //reboot the system if we get here - this is the only way out of the endless loop  
 }
 
+
+/**
+ * @brief reboot - This function reboots the system by resetting the ATmega328P microcontroller.
+ * @return void
+ */
+void reboot() {
+  //Reboot the system
+  Serial.println(F("Rebooting..."));
+  delay(1000);
+  Tracker.reboot();
+}
 
 //------------------------------------------ Functions and Timers  for the internal modulation ------------------------------------------
 /**

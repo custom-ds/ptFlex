@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 2.0.1 - July 12, 2025 - Fixed bug that was corrupting the first packet.
 Version 2.0.0 - March 9, 2025 - Major refactoring to make use of the DRA/SA818V transmitter module. Based on the prior TNC module from the ptFlex-series of trackers.
 
 */
@@ -46,6 +47,7 @@ Modem::Modem(uint8_t pinEnable, uint8_t pinPTT, uint8_t pinTxAudio, uint8_t pinS
   this->_txDelay = 30;    //default to 30 if not otherwise defined.
   this->_lastTransmitMillis = 0;    //initialize the last transmit time to zero
 
+  _iSZLen = -1;      //reset back to a clean buffer
   this->PTT(false);   //make sure the transmitter is unkeyed
 }
 
@@ -522,7 +524,7 @@ uint8_t Modem::getNextBit() {
     break;
 
   default:
-    //this should never happen, but if it does, set to state 5 to shut down the transmitter
+    //this should never happen, but if it does, set to state 6 to shut down the transmitter
     this->_iTxState = 6;
     bOut = true;
   }

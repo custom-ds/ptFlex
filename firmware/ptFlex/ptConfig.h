@@ -20,7 +20,7 @@ You should have received a copy of the GNU General Public License along with thi
 #include <EEPROM.h>
 #include <avr/wdt.h>
 
-#define CONFIG_VERSION "PT0100"
+#define CONFIG_VERSION "PT0101"
 
 class ptConfig {
   // Public Functions
@@ -117,15 +117,6 @@ class ptConfig {
       byte getAnnounceMode() { return _config.AnnounceMode; }
       void setAnnounceMode(byte mode) { _config.AnnounceMode = mode; }
   
-      byte getGPSSerialBaud() { return _config.GPSSerialBaud; }
-      void setGPSSerialBaud(byte baud) { _config.GPSSerialBaud = baud; }
-  
-      bool getGPSSerialInvert() { return _config.GPSSerialInvert; }
-      void setGPSSerialInvert(bool invert) { _config.GPSSerialInvert = invert; }
-  
-      byte getGPSType() { return _config.GPSType; }
-      void setGPSType(byte type) { _config.GPSType = type; }
-  
       char* getStatusMessage() { return _config.StatusMessage; }
       void setStatusMessage(char* message) { strcpy(_config.StatusMessage, message); }
   
@@ -150,9 +141,6 @@ class ptConfig {
       bool getStatusXmitCustom() { return _config.StatusXmitCustom; }
       void setStatusXmitCustom(bool xmit) { _config.StatusXmitCustom = xmit; }
   
-      byte getRadioType() { return _config.RadioType; }
-      void setRadioType(byte type) { _config.RadioType = type; }
-  
       unsigned int getRadioTxDelay() { return _config.RadioTxDelay; }
       void setRadioTxDelay(unsigned int delay) { _config.RadioTxDelay = delay; }
   
@@ -165,11 +153,11 @@ class ptConfig {
       char* getRadioFreqRx() { return _config.RadioFreqRx; }
       void setRadioFreqRx(char* freq) { strcpy(_config.RadioFreqRx, freq); }
   
-      bool getI2cBME280() { return _config.I2cBME280; }
-      void setI2cBME280(bool i2c) { _config.I2cBME280 = i2c; }
-
       bool getUseGlobalFreq() { return _config.UseGlobalFreq; }
       void setUseGlobalFreq(bool value) { _config.UseGlobalFreq = value; }
+      
+      bool getI2cBME280() { return _config.I2cBME280; }
+      void setI2cBME280(bool i2c) { _config.I2cBME280 = i2c; }
 
       bool getDisableGPSDuringXmit() { return _config.DisableGPSDuringXmit; }
       void setDisableGPSDuringXmit(bool delay) { _config.DisableGPSDuringXmit = delay; }
@@ -227,12 +215,13 @@ class ptConfig {
       
         byte BeaconSlot1;
         byte BeaconSlot2;
-      
+
+        //Beacon Type 4 Settings
+        unsigned int VoltThreshGPS;    //The voltage threshold to activate the GPS and read a position (in millivolts)
+        unsigned int VoltThreshXmit;    //The voltage threshold to transmit a packet (in millivolts)
+        unsigned int MinTimeBetweenXmits;    //The minimum time between transmissions (in seconds)        
+
         byte AnnounceMode;    //0=None, 1=LED, 2=Audio, 3=LED+Audio
-      
-        byte GPSSerialBaud;    //1=300, 2=1200 3=2400 4=4800 5=9600 6=19200
-        bool GPSSerialInvert;    //Invert the incoming serial string.
-        byte GPSType;      //0=Generic NMEA, 1=UBlox, 2=ATGM332D
       
         char StatusMessage[41];
         bool StatusXmitGPSFix;
@@ -249,17 +238,12 @@ class ptConfig {
         bool RadioCourtesyTone;
         char RadioFreqTx[9];
         char RadioFreqRx[9];
+        bool UseGlobalFreq;    //Use the global frequency database based on position
       
         //Enable the BME280 temperature/pressure sensor
         bool I2cBME280;
-        bool UseGlobalFreq;    //Use the global frequency database based on position
         bool DisableGPSDuringXmit;
         bool HourlyReboot;
-
-        //Beacon Type 4 Settings
-        unsigned int VoltThreshGPS;    //The voltage threshold to activate the GPS and read a position (in millivolts)
-        unsigned int VoltThreshXmit;    //The voltage threshold to transmit a packet (in millivolts)
-        unsigned int MinTimeBetweenXmits;    //The minimum time between transmissions (in seconds)
         bool DelayXmitUntilGPSFix;    //delay up to 1 minute for a GPS fix before transmitting
 
         unsigned int CheckSum;    //sum of the callsign element.  If it doesn't match, then it reinitializes the EEPROM
