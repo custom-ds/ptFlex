@@ -5,313 +5,6 @@
 	(uuid "166d0a8f-2333-4a81-bfd6-a1b5ff84420a")
 	(paper "User" 519.176 229.133)
 	(lib_symbols
-		(symbol "CEM-1206S:CEM-1206S"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "LS"
-				(at -3.8354 8.9154 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "CEM-1206S"
-				(at -3.8354 -11.4808 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "CUI_CEM-1206S"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Description" "12 mm, 5 V, 85 dB, Through Hole, Sealed, Magnetic Audio Transducer Buzzer"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "MF" "CUI"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "PACKAGE" "CUI"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "PRICE" "0.61 USD"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "CEM-1206S"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "AVAILABILITY" "Good"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "CEM-1206S_0_0"
-				(polyline
-					(pts
-						(xy -0.635 1.27) (xy 0 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 -1.27) (xy -0.635 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0.635 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy -0.635 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.27) (xy 0.635 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 1.27) (xy 1.905 3.175)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 3.175) (xy 1.905 -3.175)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 -3.175) (xy 0.635 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(text "+"
-					(at -1.905 1.27 0)
-					(effects
-						(font
-							(size 1.778 1.778)
-						)
-						(justify left bottom)
-					)
-				)
-				(text "-"
-					(at -1.905 -2.794 0)
-					(effects
-						(font
-							(size 1.778 1.778)
-						)
-						(justify left bottom)
-					)
-				)
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "P"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "N"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Barrel_Jack_Switch"
 			(pin_names
 				(hide yes)
@@ -2207,6 +1900,255 @@
 						(effects
 							(font
 								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Custom DS:PIezo CEM-1206S"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LS"
+				(at 3.302 3.048 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "CEM-1206S"
+				(at 3.302 -4.318 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "CUI_CEM-1206S"
+				(at 3.048 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "12 mm, 5 V, 85 dB, Through Hole, Sealed, Magnetic Audio Transducer Buzzer"
+				(at 3.048 0.762 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(symbol "PIezo CEM-1206S_0_0"
+				(polyline
+					(pts
+						(xy -0.635 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -1.27) (xy -0.635 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0.635 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -0.635 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.27) (xy 0.635 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.27) (xy 1.905 3.175)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 3.175) (xy 1.905 -3.175)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -3.175) (xy 0.635 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "+"
+					(at -1.905 1.27 0)
+					(effects
+						(font
+							(size 1.778 1.778)
+						)
+						(justify left bottom)
+					)
+				)
+				(text "-"
+					(at -1.905 -2.794 0)
+					(effects
+						(font
+							(size 1.778 1.778)
+						)
+						(justify left bottom)
+					)
+				)
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "P"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "N"
+						(effects
+							(font
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -6166,7 +6108,7 @@
 		(uuid "550d0c42-88be-45fe-8bca-8cfebcf7b029")
 	)
 	(junction
-		(at 256.54 134.62)
+		(at 246.38 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "579cabb7-3977-458d-96e1-028e5fdb0edc")
@@ -6206,6 +6148,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "63bc1a77-112c-41a7-ba3c-65ed35464650")
+	)
+	(junction
+		(at 266.7 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65d598c4-f8da-4482-95db-c17435a543d7")
 	)
 	(junction
 		(at 341.63 184.15)
@@ -6296,6 +6244,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e6dba13-43f9-4a00-a818-40a31a9a95ae")
+	)
+	(junction
+		(at 262.89 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9282b633-7323-47c5-bdb2-a6386f704ade")
 	)
 	(junction
 		(at 285.75 208.28)
@@ -6442,7 +6396,7 @@
 		(uuid "f9874295-ad6d-4266-8adc-f50e49321d9e")
 	)
 	(junction
-		(at 256.54 165.1)
+		(at 246.38 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa86cb29-bb6f-4958-a4f3-6698247e8bb2")
@@ -6629,7 +6583,7 @@
 	)
 	(wire
 		(pts
-			(xy 269.24 152.4) (xy 273.05 152.4)
+			(xy 259.08 152.4) (xy 266.7 152.4)
 		)
 		(stroke
 			(width 0)
@@ -6819,6 +6773,16 @@
 	)
 	(wire
 		(pts
+			(xy 266.7 152.4) (xy 276.86 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26a1c3f5-0902-464f-bd89-0e3d54ca2451")
+	)
+	(wire
+		(pts
 			(xy 397.51 48.26) (xy 396.24 48.26)
 		)
 		(stroke
@@ -6926,6 +6890,16 @@
 			(type solid)
 		)
 		(uuid "2f38f381-b55e-4bbf-8b49-50f59c2f5ea8")
+	)
+	(wire
+		(pts
+			(xy 266.7 137.16) (xy 266.7 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fd2c8a5-6bcd-4d6c-92b1-69a3fdb7275c")
 	)
 	(wire
 		(pts
@@ -7219,7 +7193,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 157.48) (xy 269.24 157.48)
+			(xy 287.02 157.48) (xy 259.08 157.48)
 		)
 		(stroke
 			(width 0)
@@ -7279,7 +7253,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 152.4) (xy 273.05 149.86)
+			(xy 276.86 152.4) (xy 276.86 149.86)
 		)
 		(stroke
 			(width 0)
@@ -7386,6 +7360,16 @@
 			(type default)
 		)
 		(uuid "60c79918-7384-46e6-92c1-f25fbecea6a4")
+	)
+	(wire
+		(pts
+			(xy 262.89 137.16) (xy 262.89 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61146fc3-5204-46a2-a838-8a751023e833")
 	)
 	(wire
 		(pts
@@ -7819,7 +7803,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 152.4) (xy 292.1 152.4)
+			(xy 287.02 152.4) (xy 292.1 152.4)
 		)
 		(stroke
 			(width 0)
@@ -7829,7 +7813,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 149.86) (xy 287.02 149.86)
+			(xy 276.86 149.86) (xy 287.02 149.86)
 		)
 		(stroke
 			(width 0)
@@ -7849,7 +7833,17 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 165.1) (xy 256.54 165.1)
+			(xy 262.89 147.32) (xy 284.48 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b643c4e-0d5b-47cf-a05e-5b490f890b89")
+	)
+	(wire
+		(pts
+			(xy 241.3 165.1) (xy 246.38 165.1)
 		)
 		(stroke
 			(width 0)
@@ -7939,7 +7933,7 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 165.1) (xy 256.54 170.18)
+			(xy 246.38 165.1) (xy 246.38 170.18)
 		)
 		(stroke
 			(width 0)
@@ -8189,7 +8183,7 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 134.62) (xy 256.54 134.62)
+			(xy 241.3 134.62) (xy 246.38 134.62)
 		)
 		(stroke
 			(width 0)
@@ -8259,7 +8253,7 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 129.54) (xy 256.54 134.62)
+			(xy 246.38 129.54) (xy 246.38 134.62)
 		)
 		(stroke
 			(width 0)
@@ -8599,7 +8593,7 @@
 	)
 	(wire
 		(pts
-			(xy 269.24 147.32) (xy 284.48 147.32)
+			(xy 259.08 147.32) (xy 262.89 147.32)
 		)
 		(stroke
 			(width 0)
@@ -8779,7 +8773,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 157.48) (xy 275.59 152.4)
+			(xy 287.02 157.48) (xy 287.02 152.4)
 		)
 		(stroke
 			(width 0)
@@ -8942,6 +8936,50 @@
 		(uuid "1a3a1431-ca25-466b-9317-6cd1bec14962")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 442.9489 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SCL"
+		(shape input)
+		(at 262.89 137.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify left)
+		)
+		(uuid "1c137505-e065-48ee-b6c6-e22e27086e13")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 262.89 132.6151 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SDA"
+		(shape input)
+		(at 266.7 137.16 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify left)
+		)
+		(uuid "265cfb55-7909-4beb-a245-03f0215827cc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.7 132.5728 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12127,6 +12165,79 @@
 		)
 	)
 	(symbol
+		(lib_id "Custom DS:PIezo CEM-1206S")
+		(at 172.72 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4873b651-00ce-4e59-8d38-f4279c4633b0")
+		(property "Reference" "PZ1"
+			(at 176.53 145.8434 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CEM-1206S"
+			(at 176.53 148.3834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Custom DS:CUI_CEM-1206S"
+			(at 175.768 149.352 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "12 mm, 5 V, 85 dB, Through Hole, Sealed, Magnetic Audio Transducer Buzzer"
+			(at 175.768 146.558 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "P"
+			(uuid "9813dca8-5cde-4e9d-b211-17ae9d5015fa")
+		)
+		(pin "N"
+			(uuid "7d437e7a-792f-4167-987c-7a43f6be3efe")
+		)
+		(instances
+			(project ""
+				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
+					(reference "PZ1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
 		(at 166.37 55.88 0)
 		(mirror y)
@@ -12305,7 +12416,7 @@
 	)
 	(symbol
 		(lib_id "Sensor:BME280")
-		(at 254 149.86 0)
+		(at 243.84 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12314,7 +12425,7 @@
 		(fields_autoplaced yes)
 		(uuid "4b4c4afa-174f-4d0c-bff3-60008ef43748")
 		(property "Reference" "U6"
-			(at 242.57 148.5899 0)
+			(at 232.41 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12323,7 +12434,7 @@
 			)
 		)
 		(property "Value" "BME280"
-			(at 242.57 151.1299 0)
+			(at 232.41 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12332,7 +12443,7 @@
 			)
 		)
 		(property "Footprint" "Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering"
-			(at 292.1 161.29 0)
+			(at 281.94 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12341,7 +12452,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf"
-			(at 254 154.94 0)
+			(at 243.84 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12350,7 +12461,7 @@
 			)
 		)
 		(property "Description" "3-in-1 sensor, humidity, pressure, temperature, I2C and SPI interface, 1.71-3.6V, LGA-8"
-			(at 254 149.86 0)
+			(at 243.84 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12359,7 +12470,7 @@
 			)
 		)
 		(property "Digikey" "828-1063-1-ND"
-			(at 254 149.86 0)
+			(at 243.84 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12368,7 +12479,7 @@
 			)
 		)
 		(property "LCSC" "C92489"
-			(at 254 149.86 0)
+			(at 243.84 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13439,97 +13550,6 @@
 		)
 	)
 	(symbol
-		(lib_id "CEM-1206S:CEM-1206S")
-		(at 172.72 147.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6869d4c0-a98d-40dd-b034-bc9abeff56c2")
-		(property "Reference" "PZ1"
-			(at 176.53 145.8434 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CEM-1206S"
-			(at 176.53 148.3834 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "CUI_CEM-1206S"
-			(at 172.72 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "12 mm, 5 V, 85 dB, Through Hole, Sealed, Magnetic Audio Transducer Buzzer"
-			(at 172.72 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PACKAGE" "CUI"
-			(at 172.72 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Digikey" "102-1155-ND"
-			(at 172.72 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "P"
-			(uuid "cab6e08d-b5f3-4c30-b550-eb5db9082049")
-		)
-		(pin "N"
-			(uuid "ed1e1870-d1dd-48f8-9d63-65f3d02d5beb")
-		)
-		(instances
-			(project ""
-				(path "/166d0a8f-2333-4a81-bfd6-a1b5ff84420a"
-					(reference "PZ1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 337.82 106.68 0)
 		(unit 1)
@@ -14238,7 +14258,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 256.54 129.54 0)
+		(at 246.38 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14247,7 +14267,7 @@
 		(fields_autoplaced yes)
 		(uuid "82ca5d11-1fe1-4f40-b981-9e0d02f8caeb")
 		(property "Reference" "#PWR017"
-			(at 256.54 133.35 0)
+			(at 246.38 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14256,7 +14276,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 256.54 124.46 0)
+			(at 246.38 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14264,7 +14284,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 256.54 129.54 0)
+			(at 246.38 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14273,7 +14293,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 256.54 129.54 0)
+			(at 246.38 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14282,7 +14302,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 256.54 129.54 0)
+			(at 246.38 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14586,7 +14606,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 256.54 170.18 0)
+		(at 246.38 170.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14594,7 +14614,7 @@
 		(dnp no)
 		(uuid "8a2a77e4-6287-40f4-aa40-43feb8bc501f")
 		(property "Reference" "#SUPPLY026"
-			(at 256.54 170.18 0)
+			(at 246.38 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14603,7 +14623,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 258.064 172.212 0)
+			(at 247.904 172.212 0)
 			(effects
 				(font
 					(size 1.778 1.5113)
@@ -14613,7 +14633,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 256.54 170.18 0)
+			(at 246.38 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14622,7 +14642,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 256.54 170.18 0)
+			(at 246.38 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14631,7 +14651,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 256.54 170.18 0)
+			(at 246.38 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16511,7 +16531,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMB_Jack_Vertical"
+		(property "Footprint" "Custom DS:SMA_Thru_Hole"
 			(at 482.6 54.61 0)
 			(effects
 				(font
@@ -18142,7 +18162,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 142.24 0)
+		(at 259.08 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18150,7 +18170,7 @@
 		(dnp no)
 		(uuid "e0b74263-f189-4710-b658-c096c7f7c6c3")
 		(property "Reference" "#SUPPLY027"
-			(at 269.24 142.24 0)
+			(at 259.08 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18159,7 +18179,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 270.764 144.272 0)
+			(at 260.604 144.272 0)
 			(effects
 				(font
 					(size 1.778 1.5113)
@@ -18169,7 +18189,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 269.24 142.24 0)
+			(at 259.08 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18178,7 +18198,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 269.24 142.24 0)
+			(at 259.08 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18187,7 +18207,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 269.24 142.24 0)
+			(at 259.08 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
