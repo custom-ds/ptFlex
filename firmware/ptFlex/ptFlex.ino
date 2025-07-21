@@ -20,10 +20,9 @@ Before programming for the first time, the ATmega fuses must be set.
 */
 
 
-#define FIRMWARE_VERSION "1.5.0"
+#define FIRMWARE_VERSION "1.5.1"
 #define CONFIG_PROMPT "\n\n# "
-
-
+#include "BoardDef.h"   //defines if this is a ptFlex or ptSolar PCB board
 
 
 #define __PROG_TYPES_COMPAT__
@@ -147,9 +146,6 @@ void loop() {
 
 
   wdt_reset();
-  // Serial.println("");
-  // Serial.print(F("Loop: "));
-  // Serial.println(millis());
   
   //Check to see if we have a command from the serial port to indicate that we need to enter config mode
   if (Serial.available()) {

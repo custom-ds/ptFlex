@@ -14,6 +14,8 @@ You should have received a copy of the GNU General Public License along with thi
 #ifndef Modem_h
 #define Modem_h
 
+#include "BoardDef.h"
+
 
 #include <stdint.h>   //standard data types available, such as uint8_t
 #include <avr/io.h>
@@ -96,10 +98,16 @@ class Modem {
     static const uint16_t BAUD_GENERATOR_COUNT = 22;
     static const uint16_t COURTESY_TONE_COUNT = 4000;
 
-    static const uint16_t TIMER1_OCR = 606;
     static const uint16_t TONE_HIGH_STEPS_PER_TICK = 5461;		//2200Hz Tone
     static const uint16_t TONE_LOW_STEPS_PER_TICK = 2979; 		//1200Hz Tone
     static const uint16_t TONE_COURTESY_STEPS_PER_TICK = 4220; 		//1700Hz Courtesy Tone
+
+#ifdef TRACKER_PTFLEX
+    static const uint16_t TIMER1_OCR = 606;   //606 is the value for a 16MHz clock, which is used by the ptFlex.
+#endif
+#ifdef TRACKER_PTSOLAR
+    static const uint16_t TIMER1_OCR = 303;    //303 is the value for a 8MHz clock, which is used by the ptSolar that runs at 3.3V.
+#endif
 
 
   private:

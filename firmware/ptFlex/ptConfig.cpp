@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 1.1.1 - July 20, 2025 - Synchronized the ptFlex and ptSolar code bases to be parameterized by the TRACKER_PTFLEX and TRACKER_PTSOLAR defines.
 Version 1.1.0 - July 12, 2025 - Updated to PT0101 configuration format, which simplied a few unused parameters.
 Version 1.0.0 - March 9, 2025 - Initial Release.
 
@@ -55,10 +56,46 @@ void ptConfig::setDefaultConfig() {
 
     wdt_reset();    //reset the watchdog timer
 
+    //Set the unit-specific default configurations
+#ifdef TRACKER_PTFLEX
+    //defaults for the ptFlex
+    strcpy(this->_config.Destination, "APPRJ1");
+    this->_config.DestinationSSID = '0';
+    this->_config.BeaconType = 2;    //0=Simple delay, 1=Speed-based, 2=Altitude-based, 3=Time Slots, 4=Low-power
+    strcpy(this->_config.StatusMessage, "Project Traveler ptFlex");
+    this->_config.I2cBME280 = 1;    //initialize the BME280
+    this->_config.UseGlobalFreq = 0;    //use the global frequency database based on position
+    this->_config.DisableGPSDuringXmit = 0;    //disable the GPS during transmission (to save power)    
+    this->_config.StatusXmitBurstAltitude = 1;
+    this->_config.StatusXmitTemp = 1;
+    this->_config.StatusXmitPressure = 1;
+    this->_config.DelayXmitUntilGPSFix = 1;    //delay transmit up to 1 minute if no GPS fix
+    this->_config.VoltThreshGPS = 1000;    //1.0V
+    this->_config.VoltThreshXmit = 1000;    //1.0V
+    this->_config.AnnounceMode = 3;    //0=No Annunciations, 1=LED, 2=Piezo, 3=Both
+    this->_config.HourlyReboot = 0;    //reboot the system every hour    
+#endif
+#ifdef TRACKER_PTSOLAR
+    //defaults for the ptSolar
+    strcpy(this->_config.Destination, "APPRJ2");
+    this->_config.DestinationSSID = '0';
+    this->_config.BeaconType = 4;    //0=Simple delay, 1=Speed-based, 2=Altitude-based, 3=Time Slots, 4=Low-power
+    strcpy(this->_config.StatusMessage, "Project Traveler ptSolar");
+    this->_config.I2cBME280 = 0;    //initialize the BME280
+    this->_config.UseGlobalFreq = 1;    //use the global frequency database based on position
+    this->_config.DisableGPSDuringXmit = 1;    //disable the GPS during transmission (to save power)    
+    this->_config.StatusXmitBurstAltitude = 0;
+    this->_config.StatusXmitTemp = 0;
+    this->_config.StatusXmitPressure = 0;
+    this->_config.DelayXmitUntilGPSFix = 1;    //delay transmit up to 1 minute if no GPS fix
+    this->_config.VoltThreshGPS = 3500;    //3.5V
+    this->_config.VoltThreshXmit = 4100;    //4.1V   
+    this->_config.AnnounceMode = 1;    //0=No Annunciations, 1=LED, 2=Piezo, 3=Both
+    this->_config.HourlyReboot = 0;    //reboot the system every hour      
+#endif  
+
     strcpy(this->_config.Callsign, "N0CALL");
     this->_config.CallsignSSID = '0';
-    strcpy(this->_config.Destination, "APRS  ");
-    this->_config.DestinationSSID = '0';
     strcpy(this->_config.Path1, "WIDE2 ");
     this->_config.Path1SSID = '1';
     strcpy(this->_config.Path2, "      ");
@@ -66,7 +103,6 @@ void ptConfig::setDefaultConfig() {
     this->_config.DisablePathAboveAltitude = 2000;
     this->_config.Symbol = 'O';    //letter O for balloons
     this->_config.SymbolPage = '/';
-    this->_config.BeaconType = 3;    //0=Simple delay, 1=Speed-based, 2=Altitude-based, 3=Time Slots, 4=Low-power
     this->_config.BeaconSimpleDelay = 30;
     this->_config.BeaconSpeedThreshLow = 20;
     this->_config.BeaconSpeedThreshHigh = 50;
@@ -80,35 +116,17 @@ void ptConfig::setDefaultConfig() {
     this->_config.BeaconAltitudeDelayHigh = 45;
     this->_config.BeaconSlot1 = 15;
     this->_config.BeaconSlot2 = 45;
-    strcpy(this->_config.StatusMessage, "Project Traveler");
     this->_config.StatusXmitGPSFix = 1;
-    this->_config.StatusXmitBurstAltitude = 0;
     this->_config.StatusXmitBatteryVoltage = 1;
-    this->_config.StatusXmitTemp = 0;
-    this->_config.StatusXmitPressure = 0;
-    this->_config.StatusXmitSeconds = 1;
+    this->_config.StatusXmitSeconds = 0;
     this->_config.StatusXmitCustom = 0;
-
-    this->_config.RadioType = 1;   //SA/DRA818V transmitter
     this->_config.RadioTxDelay = 25;
     this->_config.RadioCourtesyTone = 0;
     strcpy(this->_config.RadioFreqTx, "144.3900");
     strcpy(this->_config.RadioFreqRx, "144.3900");
-
-    this->_config.AnnounceMode = 3;    //0=No Annunciations, 1=LED, 2=Piezo, 3=Both
-
-    this->_config.I2cBME280 = 1;    //initialize the BME280
-    this->_config.UseGlobalFreq = 0;    //use the global frequency database based on position
-    this->_config.DisableGPSDuringXmit = 0;    //disable the GPS during transmission (to save power)
-    this->_config.HourlyReboot = 0;    //reboot the system every hour
-    this->_config.DelayXmitUntilGPSFix = 1;    //delay transmit up to 1 minute if no GPS fix
-
-    this->_config.VoltThreshGPS = 3500;    //3.5V
-    this->_config.VoltThreshXmit = 4100;    //4.1V
     this->_config.MinTimeBetweenXmits = 55;    //55 seconds
-
     this->_config.CheckSum = 410;		//Checksum for N0CALL
-
+  
     this->writeEEPROM();
 }
 

@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License along with thi
 #ifndef GPS_h
 #define GPS_h
 
+#include "BoardDef.h"
+
 #include "Arduino.h"
 #include <string.h>
 #include <SoftwareSerial.h>

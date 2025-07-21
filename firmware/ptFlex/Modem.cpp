@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 2.0.2 - July 20, 2025 - Synchronized the ptFlex and ptSolar code bases to be parameterized by the TRACKER_PTFLEX and TRACKER_PTSOLAR defines.
 Version 2.0.1 - July 12, 2025 - Fixed bug that was corrupting the first packet.
 Version 2.0.0 - March 9, 2025 - Major refactoring to make use of the DRA/SA818V transmitter module. Based on the prior TNC module from the ptFlex-series of trackers.
 

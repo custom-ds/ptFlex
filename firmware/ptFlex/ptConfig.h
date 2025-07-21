@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License along with thi
 #ifndef ptConfig_h
 #define ptConfig_h
 
+#include "BoardDef.h"
+
 #include <stdint.h>   //standard data types available, such as uint8_t
 #include <arduino.h>
 #include <EEPROM.h>
@@ -233,7 +235,6 @@ class ptConfig {
         bool StatusXmitCustom;
         
 
-        byte RadioType;
         unsigned int RadioTxDelay;
         bool RadioCourtesyTone;
         char RadioFreqTx[9];
