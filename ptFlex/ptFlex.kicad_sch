@@ -9789,6 +9789,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 165.1 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "46dcf682-6ea8-4e99-8c5f-0431df0a7ab5")
 		)
@@ -9867,6 +9876,15 @@
 			)
 		)
 		(property "LCSC" "C22434687"
+			(at 153.67 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 153.67 186.69 0)
 			(effects
 				(font
@@ -10013,7 +10031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 430.53 149.86 0)
 			(effects
 				(font
@@ -10022,7 +10040,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 430.53 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 430.53 149.86 0)
 			(effects
 				(font
@@ -10317,6 +10344,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 162.56 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "caf39d8f-7c08-4159-ac18-a5de6e20e956")
 		)
@@ -10400,6 +10436,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 185.42 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 185.42 201.93 0)
 			(effects
 				(font
@@ -10545,7 +10590,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 455.93 158.75 0)
 			(effects
 				(font
@@ -10554,7 +10599,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 455.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 455.93 158.75 0)
 			(effects
 				(font
@@ -10774,6 +10828,15 @@
 			)
 		)
 		(property "LCSC" "C90770"
+			(at 375.92 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 375.92 151.13 0)
 			(effects
 				(font
@@ -11052,6 +11115,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 257.81 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bcf0711a-0fb1-4f1a-a6e9-fec861e5ef02")
 		)
@@ -11134,6 +11206,15 @@
 		)
 		(property "LCSC" "C40912 "
 			(at 422.91 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 422.91 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11232,6 +11313,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 275.59 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "517cbcc2-a6b9-4e14-b523-23cf37eaa67a")
 		)
@@ -11312,6 +11402,15 @@
 			)
 		)
 		(property "LCSC" "C105173"
+			(at 468.63 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 468.63 57.15 0)
 			(effects
 				(font
@@ -11531,6 +11630,15 @@
 		)
 		(property "LCSC" "C98996"
 			(at 463.55 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 463.55 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11759,6 +11867,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 152.4 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "49dbd891-4b6c-4db5-b518-9611ef30a45c")
 		)
@@ -11827,6 +11944,15 @@
 			)
 		)
 		(property "Digikey" "732-5316-ND"
+			(at 288.29 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 288.29 83.82 0)
 			(effects
 				(font
@@ -11917,6 +12043,15 @@
 			)
 		)
 		(property "LCSC" "C5145331"
+			(at 220.98 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 220.98 184.15 0)
 			(effects
 				(font
@@ -12083,6 +12218,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 438.15 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3b332f36-bd3e-4bdb-b86c-ddc1aae22039")
 		)
@@ -12222,6 +12366,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 172.72 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "P"
 			(uuid "9813dca8-5cde-4e9d-b211-17ae9d5015fa")
 		)
@@ -12291,6 +12444,15 @@
 			)
 		)
 		(property "Digikey" "732-5394-ND"
+			(at 166.37 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 166.37 55.88 0)
 			(effects
 				(font
@@ -12399,6 +12561,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 364.49 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ba2fa34d-6a49-4dfc-a35e-d556b894cf51")
 		)
@@ -12479,6 +12650,15 @@
 			)
 		)
 		(property "LCSC" "C92489"
+			(at 243.84 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 243.84 149.86 0)
 			(effects
 				(font
@@ -12574,7 +12754,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 177.8 201.93 0)
 			(effects
 				(font
@@ -12584,7 +12764,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 177.8 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 177.8 201.93 0)
 			(effects
 				(font
@@ -12949,6 +13138,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 303.53 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "2bb73ffb-da30-40bc-97ac-f9946cc21b03")
 		)
@@ -13035,6 +13233,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 255.27 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 255.27 195.58 0)
 			(effects
 				(font
@@ -13131,6 +13338,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 386.08 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "555f1c20-b417-4fef-8777-70ce996e0f39")
 		)
@@ -13213,6 +13429,15 @@
 		)
 		(property "LCSC" "C40912 "
 			(at 464.82 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 464.82 160.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13369,6 +13594,15 @@
 			)
 		)
 		(property "LCSC" "C14877"
+			(at 224.79 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 224.79 68.58 0)
 			(effects
 				(font
@@ -13689,6 +13923,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 287.02 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1aaae130-c78e-475d-81b7-1d683595f859")
 		)
@@ -13756,7 +13999,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 393.7 54.61 0)
 			(effects
 				(font
@@ -13765,8 +14008,17 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
 			(at 393.7 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 393.7 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13857,6 +14109,15 @@
 			)
 		)
 		(property "LCSC" "C81464"
+			(at 365.76 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 365.76 68.58 0)
 			(effects
 				(font
@@ -14014,6 +14275,15 @@
 		)
 		(property "LCSC" "C95781"
 			(at 356.87 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 356.87 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14223,7 +14493,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 472.44 158.75 0)
 			(effects
 				(font
@@ -14232,7 +14502,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 472.44 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 472.44 158.75 0)
 			(effects
 				(font
@@ -14386,6 +14665,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 411.48 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "37eee3fe-f182-44e6-8efc-d6bf74a96d40")
 		)
@@ -14504,7 +14792,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 337.82 90.17 0)
 			(effects
 				(font
@@ -14513,7 +14801,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 337.82 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 337.82 90.17 0)
 			(effects
 				(font
@@ -14810,6 +15107,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 332.74 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2d610b5b-63df-40a9-90c0-61f2ac3e5e2b")
 		)
@@ -14890,6 +15196,15 @@
 			)
 		)
 		(property "LCSC" "C28323"
+			(at 377.19 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 377.19 81.28 0)
 			(effects
 				(font
@@ -15053,6 +15368,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 285.75 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c887e8ad-e348-4dbd-8772-69452838e231")
 		)
@@ -15133,6 +15457,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 265.43 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 265.43 195.58 0)
 			(effects
 				(font
@@ -15229,6 +15562,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 236.22 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ccbda65a-290f-4809-afd1-e9619c0b02ff")
 		)
@@ -15309,6 +15651,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 204.47 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 204.47 195.58 0)
 			(effects
 				(font
@@ -15472,6 +15823,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 152.4 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ce4a7e14-d648-4df2-a925-c35a7c1bd1be")
 		)
@@ -15625,6 +15985,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 443.23 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "54b8b0d2-6cfb-4907-b31f-590bb9556256")
 		)
@@ -15705,6 +16074,15 @@
 			)
 		)
 		(property "LCSC" "C541518"
+			(at 448.31 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 448.31 57.15 0)
 			(effects
 				(font
@@ -15866,6 +16244,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 353.06 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f856274b-5f4b-4e9b-ab5d-26145ed8dcfd")
 		)
@@ -15936,7 +16323,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 368.3 59.69 0)
 			(effects
 				(font
@@ -15945,7 +16332,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 368.3 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 368.3 59.69 0)
 			(effects
 				(font
@@ -16042,6 +16438,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 284.48 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e65dab4c-43ff-4aae-82b8-9b2f165e225a")
 		)
@@ -16112,7 +16517,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 414.02 149.86 0)
 			(effects
 				(font
@@ -16121,7 +16526,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 414.02 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 414.02 149.86 0)
 			(effects
 				(font
@@ -16210,6 +16624,15 @@
 			)
 		)
 		(property "LCSC" "C95781"
+			(at 165.1 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 165.1 106.68 0)
 			(effects
 				(font
@@ -16308,6 +16731,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 411.48 132.08 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "4a8f41f9-9ea6-4c1b-9af8-35b84e5e0990")
 		)
@@ -16391,6 +16823,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 374.65 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 374.65 195.58 0)
 			(effects
 				(font
@@ -16487,6 +16928,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 193.04 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9db51a3f-386b-4a08-95c8-76a68766c2db")
 		)
@@ -16559,6 +17009,15 @@
 			)
 		)
 		(property "Digikey" ""
+			(at 482.6 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 482.6 53.34 0)
 			(effects
 				(font
@@ -16655,6 +17114,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 360.68 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bbfc6d74-2537-4c4d-98d8-0c3e0e36607f")
 		)
@@ -16735,6 +17203,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 398.78 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 398.78 133.35 0)
 			(effects
 				(font
@@ -16831,6 +17308,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 383.54 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f04e2d8b-9478-4e96-8126-22b8634a6c77")
 		)
@@ -16911,6 +17397,15 @@
 			)
 		)
 		(property "LCSC" "C83170"
+			(at 247.65 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 247.65 195.58 0)
 			(effects
 				(font
@@ -17007,6 +17502,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 294.64 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "59bef94a-32ef-47d9-8e72-ca8e53466f49")
 		)
@@ -17087,6 +17591,15 @@
 			)
 		)
 		(property "LCSC" "C107700"
+			(at 252.73 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 252.73 54.61 0)
 			(effects
 				(font
@@ -17183,6 +17696,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 292.1 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e845ec86-e655-4044-9bad-114ff6dfd8cd")
 		)
@@ -17262,6 +17784,15 @@
 		)
 		(property "LCSC" "C75652"
 			(at 453.39 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 453.39 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17439,6 +17970,15 @@
 				)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 351.79 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "da1b6d85-b783-4994-b842-a01b83ee1efd")
 		)
@@ -17506,7 +18046,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 257.81 72.39 0)
 			(effects
 				(font
@@ -17515,7 +18055,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 257.81 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 257.81 72.39 0)
 			(effects
 				(font
@@ -17604,6 +18153,15 @@
 			)
 		)
 		(property "LCSC" "C108877"
+			(at 317.5 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 317.5 189.23 0)
 			(effects
 				(font
@@ -17709,6 +18267,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 458.47 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a6043729-ae0b-4f99-a3d0-1f35fba720ab")
 		)
@@ -17779,7 +18346,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 337.82 102.87 0)
 			(effects
 				(font
@@ -17788,7 +18355,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 337.82 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 337.82 102.87 0)
 			(effects
 				(font
@@ -17969,6 +18545,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 165.1 147.32 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "63e94c20-5d54-478c-a148-e8f9c6825b5f")
 		)
@@ -18049,6 +18634,15 @@
 		)
 		(property "LCSC" "C341521"
 			(at 267.97 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 267.97 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18138,6 +18732,15 @@
 		)
 		(property "LCSC" "C60816"
 			(at 351.79 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 351.79 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18292,6 +18895,15 @@
 			)
 		)
 		(property "LCSC" "C22364900"
+			(at 170.18 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 170.18 184.15 0)
 			(effects
 				(font
@@ -18586,6 +19198,15 @@
 				(hide yes)
 			)
 		)
+		(property "PACKAGE" ""
+			(at 153.67 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "25bcdde3-ee0e-40a2-8649-4e17d307b4e0")
 		)
@@ -18656,7 +19277,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-10KARCT-ND"
+		(property "Digikey" "13-RT0805FRD0710KLCT-ND"
 			(at 422.91 133.35 0)
 			(effects
 				(font
@@ -18665,7 +19286,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C110775"
+		(property "LCSC" "C100047"
+			(at 422.91 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 422.91 133.35 0)
 			(effects
 				(font
@@ -18743,7 +19373,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey" "311-150KARCT-ND"
+		(property "Digikey" "311-150KCRCT-ND"
 			(at 177.8 190.5 0)
 			(effects
 				(font
@@ -18753,7 +19383,16 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17470"
+		(property "LCSC" "C114558"
+			(at 177.8 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 177.8 190.5 0)
 			(effects
 				(font
@@ -18842,6 +19481,15 @@
 			)
 		)
 		(property "LCSC" "C107128"
+			(at 341.63 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
 			(at 341.63 195.58 0)
 			(effects
 				(font
