@@ -20,7 +20,7 @@ Before programming for the first time, the ATmega fuses must be set.
 */
 
 
-#define FIRMWARE_VERSION "1.5.1"
+#define FIRMWARE_VERSION "1.5.2"
 #define CONFIG_PROMPT "\n\n# "
 #include "BoardDef.h"   //defines if this is a ptFlex or ptSolar PCB board
 
@@ -138,7 +138,9 @@ void loop() {
 
   float fCurrentAlt, fSpeed, fMaxSpeed;
   unsigned long battMillivolts;
-  bool bXmit;
+  bool bXmit;             //Flag to indicate whether or not we should transmit this time around
+  bool bXmitPermitted;    //Flag that can be set to false to prevent transmission, such as when we're in a country that doesn't allow APRS
+  bool bISSPath;          //Flag to see if we should set the APRS Path to transmit up to the ISS
   int iSeconds;
   unsigned long msDelay;    //calculate the number of milliseconds to delay
   byte byTemp;
@@ -325,7 +327,8 @@ void loop() {
 
   
   if (bXmit) {
-    bool bXmitPermitted = true;    //assume that we can transmit
+    bXmitPermitted = true;    //assume that we can transmit
+    bISSPath = false;    //assume that we're not using the ISS path
 
     //Determine the transmit/receive frequency to use
     if (Config.getUseGlobalFreq()) {
@@ -333,6 +336,12 @@ void loop() {
       bXmitPermitted = GPSParser.getAPRSFrequency(szFreq);
       Aprs.setTxFrequency(szFreq);    //set the frequency to transmit on
       Aprs.setRxFrequency(szFreq);    //set the frequency to receive on
+
+      //if we're on 145.8250 MHz, then we should use the ISS path
+      if (szFreq[2] == '5' && szFreq[4] == '8' && szFreq[5] == '2' && szFreq[6] == '5') {
+        //we're on the ISS frequency - use the ISS path
+        bISSPath = true;
+      }
     } else {
       //we're supposed to use the local frequency - set it up
       Aprs.setTxFrequency(Config.getRadioFreqTx());    //set the frequency to transmit on
@@ -348,7 +357,7 @@ void loop() {
         GPSParser.disableGPS();     //disable the GPS module before transmitting
       }
 
-      sendPositionSingleLine();
+      sendPositionSingleLine(bISSPath);
     } else {
       Aprs.setLastTransmitMillis();   //reset the last transmit time so that we don't try to transmit again immediately.
       Serial.println(F("Xmit Prohibit"));
@@ -373,10 +382,10 @@ void loop() {
 
 /**
  * @brief sendPositionSingleLine - This function sends the position of the tracker in a single line format. It includes information such as GPS time, latitude, longitude, course, speed, altitude, and other telemetry data.
+ * @param bISSPath A boolean indicating whether or not to use the alternate path for communicating via the ISS space station.
  * @return void
  */
-void sendPositionSingleLine() {
-Serial.println(F("SendPos"));  
+void sendPositionSingleLine(bool bISSPath) {
   char szTemp[15];    //largest string held should be the longitude
   int i;
   double insideTemp;    //inside air temp
@@ -394,7 +403,15 @@ Serial.println(F("SendPos"));
       insideTemp = (double)Pressure.readTempC();
     }
   }
-  Aprs.packetHeader(Config.getDestination(), Config.getDestinationSSID(), Config.getCallsign(), Config.getCallsignSSID(), Config.getPath1(), Config.getPath1SSID(), Config.getPath2(), Config.getPath2SSID(), (GPSParser.Altitude() < Config.getDisablePathAboveAltitude()));
+
+  if (bISSPath) {
+    //we're supposed to use the ISS path
+    Aprs.packetHeader(Config.getDestination(), Config.getDestinationSSID(), Config.getCallsign(), Config.getCallsignSSID(), "ARISS ", '0', "      ", '0', true);
+  } else {
+    //we're supposed to use the normal path
+    Aprs.packetHeader(Config.getDestination(), Config.getDestinationSSID(), Config.getCallsign(), Config.getCallsignSSID(), Config.getPath1(), Config.getPath1SSID(), Config.getPath2(), Config.getPath2SSID(), (GPSParser.Altitude() < Config.getDisablePathAboveAltitude()));
+  }
+  
 
   //      /155146h3842.00N/09655.55WO301/017/A=058239
   int hh = 0, mm = 0, ss = 0;
