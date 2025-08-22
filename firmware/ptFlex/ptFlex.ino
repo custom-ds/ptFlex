@@ -520,7 +520,7 @@ void sendPositionSingleLine(bool bISSPath) {
  * @return void
  */
 void showVersion() {
-  Serial.println(F("pt Flight Computer"));
+  Serial.println(F("ptFlex Tracker"));
   Serial.print(F("Firmware Version: "));
   Serial.println((char *)FIRMWARE_VERSION);
   Serial.print(F("Config Version: "));

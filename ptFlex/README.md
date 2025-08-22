@@ -14,10 +14,10 @@ Any changes to the schematic should be completed first. When placing a part, be 
 ### Schematic Outputs
 
 #### Bill of Materials
-Once complete with the Schematic, run the Tools-Generate Bill of Materials which places the BOM inside of the /Current folder.
+Once complete with the Schematic, run the Tools &rarr; Generate Bill of Materials which places the BOM inside of the /Current folder.
 
 #### PDF Output
-Run File-Plot and output a PDF version of the schematics into the /Current folder. Be sure to rename this output to ```schematic.pdf``` in the output directory before plotting the PCB design.
+Run File &rarr; Plot and output a PDF version of the schematics into the /Current folder. Be sure to rename this output to ```schematic.pdf``` in the output directory before plotting the PCB design.
 
 ## PCB Design
 Inside of the Schematic editor, press F8 to update the PCB layout with any changes to the schematic. Adjust any layouts as necessary.
@@ -31,13 +31,13 @@ Update the Silkscreen text that indicates the version of the PCB.
 ### PCB Outputs
 
 #### Drill Files
-Run the Files-Fabrication Outputs-Gerber. From that screen, click the Generate Drill Files and output the .DRL files into the /Current folder. The format should be Excellon, and the units Millimeters.
+Run the Files &rarr; Fabrication Outputs &rarr; Gerber. From that screen, click the Generate Drill Files and output the .DRL files into the /Current folder. The format should be Excellon, and the units Millimeters.
 
 #### Gerbers
-Close out of the Drill files window, and click the File-Fabrication-Plot button to generate the set of Gerber files. These should also go into the /Current folder.
+Close out of the Drill files window, and click the File &rarr; Fabrication &rarr; Plot button to generate the set of Gerber files. These should also go into the /Current folder.
 
 #### Position Files
-Run File-Fabrication Outputs-Component Placement Files. Select CSV for the Format, then click Generate Position File.
+Run File &rarr; Fabrication Outputs &rarr; Component Placement Files. Select CSV for the Format, then click Generate Position File.
 
 In the /Current folder, find the newly created ptFlex-top-pos.csv file and open it with a text editor. The very first header line needs to be replaced with this line to align with JLC's naming scheme.
 
@@ -46,7 +46,7 @@ Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
 ```
 
 #### PDF Output
-Run File-Plot and output a PDF version of the pcb into the /Current folder. Select options for Black & White, and to plot as a single .PDF document. Be sure to rename this output to ```pcb.pdf``` in the output directory.
+Run File &rarr; Plot and output a PDF version of the pcb into the /Current folder. Select options for Black & White, and to plot as a single .PDF document. Be sure to rename this output to ```pcb.pdf``` in the output directory.
 
 ## Ordering the PCBs
 ### Collecting the Output
