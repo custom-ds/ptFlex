@@ -11,6 +11,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 2.0.4 - September 25, 2025 - Fixed potential overflow issues when printing longs.
+Version 2.0.3 - August 25, 2025 - Forced the Tx line to the SA818 to be low prior to powering down, to fix bad start-up behavior.
 Version 2.0.2 - July 20, 2025 - Synchronized the ptFlex and ptSolar code bases to be parameterized by the TRACKER_PTFLEX and TRACKER_PTSOLAR defines.
 Version 2.0.1 - July 12, 2025 - Fixed bug that was corrupting the first packet.
 Version 2.0.0 - March 9, 2025 - Major refactoring to make use of the DRA/SA818V transmitter module. Based on the prior TNC module from the ptFlex-series of trackers.
@@ -73,6 +75,8 @@ void Modem::PTT(bool tx) {
     analogWrite(this->_pinTxAudio, 128);   //Set the audio output to 128. Subsequent calls in the ISR will write directly to the OCR2B register.
 
     //Turn on the transmitter
+    digitalWrite(this->_pinSerialTx, LOW);    //set the serial port to low when powering up
+    delay(10);
     digitalWrite(this->_pinEnable, HIGH);
     
     //Configure the serial port
@@ -82,28 +86,32 @@ void Modem::PTT(bool tx) {
     delay(100);
     wdt_reset();    //reset the watchdog timer
 
-    //Connect to the radio chip
-    if (this->_debugLevel >0) Serial.println(F("Conn"));
-    XMIT->print(F("AT+DMOCONNECT\r\n"));
-    
-    //Get the response:
-    start = millis();
-    do {
-      if (XMIT->available()) {
-        response = XMIT->read();
-        if (this->_debugLevel == 2) Serial.print(response);     //debug the output from the response
-      }
-    } while (response != '0' && (millis() - start) < MAX_WAIT_TIMEOUT);
-    if (this->_debugLevel ==2) Serial.println("");
-    if (this->_debugLevel >0) Serial.println(F("End Resp"));
-    delay(100);
-
     //Configure the transceiver
-    if (this->_debugLevel >0) {
+    if (this->_debugLevel > 0) {
+      Serial.println("");
       Serial.print(F("Set Freq: "));
       Serial.println(this->_szTxFreq);
     }
 
+    //Connect to the radio chip
+    if (this->_debugLevel > 0) Serial.println(F(">AT+DMOCON"));
+    XMIT->print(F("AT+DMOCONNECT\r\n"));
+    
+    //Get the response:
+    if (this->_debugLevel == 2) Serial.print("<");    //Show an incoming carrot
+    start = millis();
+    do {
+      if (XMIT->available()) {
+        response = XMIT->read();
+        if ((this->_debugLevel == 2) && response != '\r' && response != '\n') Serial.print(response);     //debug the output from the response
+      }
+    } while (response != '0' && (millis() - start) < MAX_WAIT_TIMEOUT);
+    if (this->_debugLevel == 2) Serial.println("");
+    delay(100);
+
+
+
+    if (this->_debugLevel > 0) Serial.println(F(">AT+DMOSETGR"));
     XMIT->print(F("AT+DMOSETGROUP=0,"));
     XMIT->print(this->_szTxFreq);
     XMIT->print(",");
@@ -113,42 +121,44 @@ void Modem::PTT(bool tx) {
     wdt_reset();    //reset the watchdog timer
 
     //Get the response:
+    if (this->_debugLevel == 2) Serial.print("<");    //Show an incoming carrot
     start = millis();
     do {
       if (XMIT->available()) {
         response = XMIT->read();
-        if (this->_debugLevel == 2) Serial.print(response);     //debug the output from the response
+        if ((this->_debugLevel == 2) && response != '\r' && response != '\n') Serial.print(response);     //debug the output from the response
       }
     } while (response != '0' && (millis() - start) < MAX_WAIT_TIMEOUT);  
     
     wdt_reset();    //reset the watchdog timer
 
-    if (this->_debugLevel ==2) Serial.println("");
-    if (this->_debugLevel >0) Serial.println(F("End Resp"));
-    //delay(100);
-
-    if (this->_debugLevel >0) Serial.println("Filter:");
+    if (this->_debugLevel == 2) Serial.println("");
+    if (this->_debugLevel > 0) Serial.println(">AT+SETFIL");
     XMIT->print(F("AT+SETFILTER=1,1,1\r\n"));   //Set the tx/rx filters to 1,1,1
 
+
     //Get the response:
+    if (this->_debugLevel == 2) Serial.print("<");    //Show an incoming carrot
     start = millis();
     do {
       if (XMIT->available()) {
         response = XMIT->read();
-        if (this->_debugLevel == 2) Serial.print(response);     //debug the output from the response
+        if ((this->_debugLevel == 2) && response != '\r' && response != '\n') Serial.print(response);     //debug the output from the response
       }
     } while (response != '0' && (millis() - start) < MAX_WAIT_TIMEOUT);
 
     wdt_reset();    //reset the watchdog timer
 
-    if (this->_debugLevel ==2) Serial.println("");
-    if (this->_debugLevel >0) Serial.println(F("End Resp"));
+    if (this->_debugLevel == 2) Serial.println("");
+    if (this->_debugLevel > 0) Serial.println("");
     delay(100);
 
     // Clean up
     XMIT->end();	//close the serial port to the GPS so it doens't draw excess current
     delete XMIT;
     XMIT = nullptr;
+    digitalWrite(this->_pinSerialTx, LOW);    //set the serial port to low before going into sleep mode or else it can cause the transmitter to not engage next time
+    
 
     //Push the PTT
     digitalWrite(this->_pinPTT, HIGH);   //There's a delay of about 37mS from PTT going high to when RF is emitted.
@@ -156,8 +166,12 @@ void Modem::PTT(bool tx) {
     //End of transmission. stop the PTT and shut down the transmitter
     digitalWrite(this->_pinPTT, LOW);
     digitalWrite(this->_pinEnable, LOW);
+    //delay(10);
 
-    pinMode(this->_pinTxAudio, INPUT);    //Configure as an input until we need it. This will save power.
+    //Configure as an input until we need it. This will save power.
+    pinMode(this->_pinSerialTx, INPUT);
+    pinMode(this->_pinSerialRx, INPUT);
+    pinMode(this->_pinTxAudio, INPUT);    
   }
 }
 
@@ -286,9 +300,15 @@ void Modem::packetAppend(float f) {
  * @param bLeadingZero A boolean indicating whether or not to pad the number with leading zeros. If padded, the number will be 6 digits long.
  */
 void Modem::packetAppend(long lNumToSend, bool bLeadingZero) {
-  char szTemp[8];
-  if (bLeadingZero)  sprintf(szTemp, "%06lu", lNumToSend);    //convert the number to a string
-  else sprintf(szTemp, "%lu", lNumToSend);    //convert the number to a string
+  char szTemp[11];
+  if (bLeadingZero) {
+    //modulus the number to 999999 to make sure we don't exceed 6 digits
+    lNumToSend = lNumToSend % 1000000;
+    sprintf(szTemp, "%06lu", lNumToSend);    //convert the number to a string
+  }
+  else {
+    sprintf(szTemp, "%lu", lNumToSend);    //convert the number to a string
+  }
 
   this->packetAppend(szTemp);    //append the string to the packet buffer
 }

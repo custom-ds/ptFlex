@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 2.1.1 - September 25, 2025 - Removed UK from the prohibited transmit areas.
 Version 2.1.0 - July 12, 2025 - Removed support for older uBlox GPS. Fixed bug where GPS was returning excessive precision. Eliminated validateGPSEntence() function.
 Version 2.0.0 - May 9, 2025 - Major rewrite to be more object oriented. Added support for ATGM332 GPS module.
 Version 1.0.4 - October 18, 2015 - Found bug where GPS latitude and longitude were exceeding the buffer.  Corrected and cleaned up some old code.
@@ -737,7 +738,8 @@ bool GPS::getAPRSFrequency(char *sz) {
 		if (iLat >= 3000 && iLat <= 4500 && iLon >= 12900 && iLon <= 14600) freqSelected = 5;    //Japan on 144.6600MHz
 		if (iLat >= 500 && iLat <= 2036 && iLon >= 9700 && iLon <= 10600) freqSelected = 8;    //Thailand on 145.5300MHz
 		if (iLat >= 2200 && iLat <= 2230 && iLon >= 11347 && iLon <= 11430) freqSelected = 2;    //Hong Kong on 144.5250MHz
-		if (iLat >= 4900 && iLat <= 6100 && iLon >= -800 && iLon <= 200) freqSelected = 0;    //UK on 000.0000MHz
+		if (iLat >= 4900 && iLat <= 6100 && iLon >= -800 && iLon <= 200) freqSelected = 6;    //UK on 144.8000MHz
+
 		if (iLat >= 1148 && iLat <= 1912 && iLon >= 4200 && iLon <= 5442) freqSelected = 0;    //Yemen on 000.0000MHz
 		if (iLat >= 3742 && iLat <= 4306 && iLon >= 13100 && iLon <= 12400) freqSelected = 0;    //North Korea on 000.0000MHz
 

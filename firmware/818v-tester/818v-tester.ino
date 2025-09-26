@@ -1,10 +1,11 @@
 /* 
 
-This is a similified version of the 818V code to test the transmit functionalityon the ptSolar PCB.
+This is a similified version of the 818V code to test the transmit functionality on the ptFlex PCB.
 
 */
 
 
+#include "BoardDef.h"   //defines if this is a ptFlex or ptSolar PCB board
 
 
 #include "Modem.h"
@@ -66,7 +67,7 @@ void loop() {
   char CallsignSSID = '0';
 
   char Destination[7];
-  strcpy(Destination, "APRS  ");
+  strcpy(Destination, "APPRJ1");
 
   char DestinationSSID = '0';
 
@@ -145,6 +146,26 @@ void loop() {
   Aprs.packetSend();
   delay(DELAY_BETWEEN);   //wait X seconds and repeat
 
+  Aprs.setCourtesyTone(true);    //Set the courtesy tone flag
+  Aprs.packetHeader(Destination, DestinationSSID, Callsign, CallsignSSID, Path1, Path1SSID, Path2, Path2SSID, true);
+  Aprs.packetAppend((char *)">Testing Long Xmit 1234567 ");
+  Aprs.packetAppend((long)1234567, false);
+  Aprs.packetSend();
+  delay(DELAY_BETWEEN);   //wait X seconds and repeat
+
+  Aprs.setCourtesyTone(true);    //Set the courtesy tone flag
+  Aprs.packetHeader(Destination, DestinationSSID, Callsign, CallsignSSID, Path1, Path1SSID, Path2, Path2SSID, true);
+  Aprs.packetAppend((char *)">Testing Long Xmit 1234567 ");
+  Aprs.packetAppend((long)1234567, true);
+  Aprs.packetSend();
+  delay(DELAY_BETWEEN);   //wait X seconds and repeat
+  
+  Aprs.setCourtesyTone(true);    //Set the courtesy tone flag
+  Aprs.packetHeader(Destination, DestinationSSID, Callsign, CallsignSSID, Path1, Path1SSID, Path2, Path2SSID, true);
+  Aprs.packetAppend((char *)">Testing Long Xmit 1234567 ");
+  Aprs.packetAppend((long)1234567890, false);
+  Aprs.packetSend();
+  delay(DELAY_BETWEEN);   //wait X seconds and repeat  
 
   for (int i=1;i<=10;i++) {
 

@@ -20,7 +20,7 @@ Before programming for the first time, the ATmega fuses must be set.
 */
 
 
-#define FIRMWARE_VERSION "1.5.2"
+#define FIRMWARE_VERSION "1.6.0"
 #define CONFIG_PROMPT "\n\n# "
 #include "BoardDef.h"   //defines if this is a ptFlex or ptSolar PCB board
 
