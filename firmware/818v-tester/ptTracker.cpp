@@ -29,6 +29,9 @@ ptTracker::ptTracker(uint8_t pinLED, uint8_t pinPiezo, uint8_t pinBattery, uint8
     pinMode(this->_pinPiezo, INPUT);
     pinMode(this->_pinBattery, INPUT);
 
+    //set the analog reference to the internal 1.1V reference.  This is used for the battery voltage measurement.
+    analogReference(INTERNAL);
+
     this->_annunciateMode = annunciateMode;
   }
 
@@ -38,7 +41,6 @@ ptTracker::ptTracker(uint8_t pinLED, uint8_t pinPiezo, uint8_t pinBattery, uint8
  * @param c The character to annunciate.
  */
 void ptTracker::annunciate(char c) {
-    //send an anunciator via LED and/or buzzer, depending on config
 
     switch (c) {
         case 'c':
@@ -110,6 +112,7 @@ void ptTracker::annunciate(char c) {
         this->audioTone(DELAY_DAH);
         break;
     }
+    wdt_reset();    //reset the watchdog timer
 }
 
 
@@ -120,9 +123,22 @@ void ptTracker::annunciate(char c) {
  */
 float ptTracker::readBatteryVoltage(bool bSerialOut) {
     int iBattery = analogRead(this->_pinBattery);
-    float fVolts = (float)iBattery / 310.3;    //204.8 points per volt for 5.0V systems, 310.3 for 3.3V systems!!!!,
-    fVolts = fVolts * 5.545;        //times (122/22) to adjust for the resistor divider (5.545)
-    //  fVolts = fVolts + 0.19;      //account for the inline diode on the power supply  // not interested in diode drop for solar purposes??????????????????????????????????????????????????
+
+    //Convert value to volts.
+    // Max value: 1024
+    // 5.0V systems: 1024/5.0 = 204.8 points per volt
+    // 3.3V systems: 1024/3.3 = 310.3 points per volt
+    // 1.1V Internal Reference: 1024/1.1 = 930.9 points per volt
+    float fVolts = (float)iBattery / 930.9;
+
+    //Compensate for the resistor divider on the battery voltage measurement circuit
+    // TotalResistance / BottomResistor
+    // Top: 150k, Bottom: 10k, Total: 160k
+    // 160k / 10k = 16.0
+    fVolts = fVolts * 16.0;        //times (160/10) to adjust for the resistor divider (16.0)
+
+    //If you want to compensate for a diode drop, add it back here, in Volts.
+    //  fVolts = fVolts + 0.19;
 
     if (bSerialOut) {
         Serial.print(F("Batt: "));
@@ -130,6 +146,7 @@ float ptTracker::readBatteryVoltage(bool bSerialOut) {
         Serial.println("V");    
     }
 
+    wdt_reset();    //reset the watchdog timer
     return fVolts;
 }
 
@@ -140,10 +157,15 @@ float ptTracker::readBatteryVoltage(bool bSerialOut) {
  * @note This function is called regardless of whether the audio annunciator is enabled or not, in order to provide consistent timing to the LED annunciator.
  */
 void ptTracker::audioTone(int length) {
+    wdt_reset();    //reset the watchdog timer
 
-    //Set the pins to outputs
-    pinMode(this->_pinLED, OUTPUT);  
-    pinMode(this->_pinPiezo, OUTPUT);
+    //Set the pins to outputs if they are needed for the annunciation mode selected
+    if (this->_annunciateMode & 0x01) {
+        pinMode(this->_pinLED, OUTPUT);
+    }
+    if (this->_annunciateMode & 0x02) {
+        pinMode(this->_pinPiezo, OUTPUT);
+    }
 
     if (this->_annunciateMode & 0x01) {
         digitalWrite(this->_pinLED, HIGH);

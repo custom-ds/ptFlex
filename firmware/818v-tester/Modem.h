@@ -14,11 +14,14 @@ You should have received a copy of the GNU General Public License along with thi
 #ifndef Modem_h
 #define Modem_h
 
+#include "BoardDef.h"
+
 
 #include <stdint.h>   //standard data types available, such as uint8_t
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <arduino.h>
+#include <avr/wdt.h>
 
 // defines for setting and clearing register bits
 #ifndef cbi
@@ -86,16 +89,25 @@ class Modem {
           if (iPhase & 0x80) return 100 + pgm_read_byte(&arySin[(iPhase & 0x7f)]);    //first half of the sine wave
           return 100 - pgm_read_byte(&arySin[(iPhase & 0x7f)]);    //second half of the sine wave
     }
+    
+    inline unsigned long getLastTransmitMillis() { return _lastTransmitMillis; }
+    inline void setLastTransmitMillis() { _lastTransmitMillis = millis(); }    //Set the last transmit time to now
 
 
 	  //Parameters for the Numerically Controlled Oscillator NCO. See notes in the ConfigureTimers() function for details
     static const uint16_t BAUD_GENERATOR_COUNT = 22;
     static const uint16_t COURTESY_TONE_COUNT = 4000;
 
-    static const uint16_t TIMER1_OCR = 303;
     static const uint16_t TONE_HIGH_STEPS_PER_TICK = 5461;		//2200Hz Tone
     static const uint16_t TONE_LOW_STEPS_PER_TICK = 2979; 		//1200Hz Tone
     static const uint16_t TONE_COURTESY_STEPS_PER_TICK = 4220; 		//1700Hz Courtesy Tone
+
+#ifdef TRACKER_PTFLEX
+    static const uint16_t TIMER1_OCR = 605;   //606 is the value for a 16MHz clock, which is used by the ptFlex. Shifted down one to account for low-temp operation.
+#endif
+#ifdef TRACKER_PTSOLAR
+    static const uint16_t TIMER1_OCR = 302;    //303 is the value for a 8MHz clock, which is used by the ptSolar that runs at 3.3V. Shifted down one to account for low-temp operation.
+#endif
 
 
   private:
@@ -105,6 +117,8 @@ class Modem {
     uint8_t _pinTxAudio;
     uint8_t _pinSerialTx;
     uint8_t _pinSerialRx;
+    unsigned long _lastTransmitMillis;
+
 
     uint8_t _debugLevel;
 
