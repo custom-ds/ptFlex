@@ -103,10 +103,10 @@ class Modem {
     static const uint16_t TONE_COURTESY_STEPS_PER_TICK = 4220; 		//1700Hz Courtesy Tone
 
 #ifdef TRACKER_PTFLEX
-    static const uint16_t TIMER1_OCR = 606;   //606 is the value for a 16MHz clock, which is used by the ptFlex.
+    static const uint16_t TIMER1_OCR = 605;   //606 is the value for a 16MHz clock, which is used by the ptFlex. Shifted down one to account for low-temp operation.
 #endif
 #ifdef TRACKER_PTSOLAR
-    static const uint16_t TIMER1_OCR = 303;    //303 is the value for a 8MHz clock, which is used by the ptSolar that runs at 3.3V.
+    static const uint16_t TIMER1_OCR = 302;    //303 is the value for a 8MHz clock, which is used by the ptSolar that runs at 3.3V. Shifted down one to account for low-temp operation.
 #endif
 
 

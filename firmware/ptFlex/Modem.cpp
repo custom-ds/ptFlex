@@ -11,7 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
-Version 2.0.4 - September 25, 2025 - Fixed potential overflow issues when printing longs.
+Version 2.0.4 - September 25, 2025 - Fixed potential overflow issues when printing longs. Adjusted timer overflow to account for cold-temperature operation.
 Version 2.0.3 - August 25, 2025 - Forced the Tx line to the SA818 to be low prior to powering down, to fix bad start-up behavior.
 Version 2.0.2 - July 20, 2025 - Synchronized the ptFlex and ptSolar code bases to be parameterized by the TRACKER_PTFLEX and TRACKER_PTSOLAR defines.
 Version 2.0.1 - July 12, 2025 - Fixed bug that was corrupting the first packet.
