@@ -1,6 +1,6 @@
 /*
 Board-specific functions for Project: Traveler Flight Controllers
-Copyright 2011-2025 - Zack Clobes (W0ZC), Custom Digital Services, LLC
+Copyright 2011-2026 - Zack Clobes (W0ZC), Custom Digital Services, LLC
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

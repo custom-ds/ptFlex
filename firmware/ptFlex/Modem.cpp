@@ -1,6 +1,6 @@
 /*
 APRS Data Modem for Project: Traveler Flight Controllers
-Copyright 2011-2025 - Zack Clobes (W0ZC), Custom Digital Services, LLC
+Copyright 2011-2026 - Zack Clobes (W0ZC), Custom Digital Services, LLC
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 2.0.5 - April 11, 2026 - Fix when passing signed longs out for altitude.
 Version 2.0.4 - September 25, 2025 - Fixed potential overflow issues when printing longs. Adjusted timer overflow to account for cold-temperature operation.
 Version 2.0.3 - August 25, 2025 - Forced the Tx line to the SA818 to be low prior to powering down, to fix bad start-up behavior.
 Version 2.0.2 - July 20, 2025 - Synchronized the ptFlex and ptSolar code bases to be parameterized by the TRACKER_PTFLEX and TRACKER_PTSOLAR defines.
@@ -304,10 +305,10 @@ void Modem::packetAppend(long lNumToSend, bool bLeadingZero) {
   if (bLeadingZero) {
     //modulus the number to 999999 to make sure we don't exceed 6 digits
     lNumToSend = lNumToSend % 1000000;
-    sprintf(szTemp, "%06lu", lNumToSend);    //convert the number to a string
+    sprintf(szTemp, "%06ld", lNumToSend);    //convert the number to a string
   }
   else {
-    sprintf(szTemp, "%lu", lNumToSend);    //convert the number to a string
+    sprintf(szTemp, "%ld", lNumToSend);    //convert the number to a string
   }
 
   this->packetAppend(szTemp);    //append the string to the packet buffer

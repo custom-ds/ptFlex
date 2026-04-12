@@ -1,6 +1,6 @@
 /*
 APRS Data Modem for Project: Traveler Flight Controllers
-Copyright 2011-2025 - Zack Clobes (W0ZC), Custom Digital Services, LLC
+Copyright 2011-2026 - Zack Clobes (W0ZC), Custom Digital Services, LLC
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -132,11 +132,11 @@ class Modem {
     int _iSZLen;    //Tracks the current size of the szXmit buffer  
 
     unsigned int _txDelay;
-    uint8_t _iSZPos = 0;    //Tracks the current byte being modulated out of the modem
-    int _iTxDelayRemaining = 0;
-    bool _bNoStuffing = false;
-    unsigned int _CRC;
-    uint8_t _iTxState = 0;
+    volatile uint8_t _iSZPos = 0;    //Tracks the current byte being modulated out of the modem
+    volatile int _iTxDelayRemaining = 0;
+    volatile bool _bNoStuffing = false;
+    volatile unsigned int _CRC;
+    volatile uint8_t _iTxState = 0;
 
 
     // Private Functions

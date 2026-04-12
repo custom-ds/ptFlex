@@ -1,6 +1,6 @@
 /*
 Project: Traveler pfFlex Firmware
-Copyright 2011-2025 - Zack Clobes (W0ZC), Custom Digital Services, LLC
+Copyright 2011-2026 - Zack Clobes (W0ZC), Custom Digital Services, LLC
 
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Before programming for the first time, the ATmega fuses must be set.
 */
 
 
-#define FIRMWARE_VERSION "1.6.0"
+#define FIRMWARE_VERSION "1.6.1"
 #define CONFIG_PROMPT "\n\n# "
 #include "BoardDef.h"   //defines if this is a ptFlex or ptSolar PCB board
 
@@ -82,6 +82,7 @@ BME280 Pressure;      //BMP280 pressure/temp sensor
 
 bool bHasBurst;
 float fMaxAlt;
+float fMaxSpeed;
 
 
 /**
@@ -102,6 +103,7 @@ void setup() {
 
   //Init some variables
   fMaxAlt = 0;
+  fMaxSpeed = 0;
   bHasBurst = false;
 
   Tracker.annunciate('k');
@@ -136,7 +138,7 @@ void setup() {
  */
 void loop() {
 
-  float fCurrentAlt, fSpeed, fMaxSpeed;
+  float fCurrentAlt, fSpeed;
   unsigned long battMillivolts;
   bool bXmit;             //Flag to indicate whether or not we should transmit this time around
   bool bXmitPermitted;    //Flag that can be set to false to prevent transmission, such as when we're in a country that doesn't allow APRS
@@ -414,7 +416,7 @@ void sendPositionSingleLine(bool bISSPath) {
   
 
   //      /155146h3842.00N/09655.55WO301/017/A=058239
-  int hh = 0, mm = 0, ss = 0;
+  uint8_t hh = 0, mm = 0, ss = 0;
   GPSParser.getGPSTime(&hh, &mm, &ss);
   Aprs.packetAppend((char *)"/");
 
@@ -667,7 +669,7 @@ void doConfigMode() {
         Config.readEEPROM();    //pull the configs from eeprom
         Config.sendConfigToPC();
 
-        reboot();    //reboot the system while we're waiting for a new config to be loaded        
+        reboot();    //reboot the system while we're waiting for a new config to be loaded
       }
 
 
