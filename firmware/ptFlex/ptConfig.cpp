@@ -104,7 +104,7 @@ void ptConfig::setDefaultConfig() {
     this->_config.DisablePathAboveAltitude = 2000;
     this->_config.Symbol = 'O';    //letter O for balloons
     this->_config.SymbolPage = '/';
-    this->_config.BeaconSimpleDelay = 30;
+    this->_config.BeaconSimpleDelay = 45;
     this->_config.BeaconSpeedThreshLow = 20;
     this->_config.BeaconSpeedThreshHigh = 50;
     this->_config.BeaconSpeedDelayLow = 300;
@@ -112,11 +112,11 @@ void ptConfig::setDefaultConfig() {
     this->_config.BeaconSpeedDelayHigh = 120;
     this->_config.BeaconAltitudeThreshLow = 5000;
     this->_config.BeaconAltitudeThreshHigh = 20000;
-    this->_config.BeaconAltitudeDelayLow  = 30;
+    this->_config.BeaconAltitudeDelayLow  = 45;
     this->_config.BeaconAltitudeDelayMid  = 60;
-    this->_config.BeaconAltitudeDelayHigh = 45;
+    this->_config.BeaconAltitudeDelayHigh = 55;
     this->_config.BeaconSlot1 = 15;
-    this->_config.BeaconSlot2 = 45;
+    this->_config.BeaconSlot2 = 15;
     this->_config.StatusXmitGPSFix = 1;
     this->_config.StatusXmitBatteryVoltage = 1;
     this->_config.StatusXmitSeconds = 0;
@@ -125,7 +125,7 @@ void ptConfig::setDefaultConfig() {
     this->_config.RadioCourtesyTone = 0;
     strcpy(this->_config.RadioFreqTx, "144.3900");
     strcpy(this->_config.RadioFreqRx, "144.3900");
-    this->_config.MinTimeBetweenXmits = 55;    //55 seconds
+    this->_config.MinTimeBetweenXmits = 75;    //75 seconds
     this->_config.CheckSum = 410;		//Checksum for N0CALL
   
     this->writeEEPROM();
