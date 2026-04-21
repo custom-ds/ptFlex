@@ -469,8 +469,9 @@ void GPS::parseRMC() {
 	
 	//get date
 	this->getString(ptrTemp, this->_szGPSDate, 7);
-	
+
 	this->convertLatLon();		//convert the lat/lon strings to decimal format
+
 
 }
 
@@ -520,6 +521,7 @@ void GPS::parseGGA() {
 		szB[1] = sz[5];
 		this->_currTime.ss = atoi(szB);
 	}
+
 	ptrTemp = this->skipToNext(ptrTemp);			//skip thru the rest of the chars in the time
 
 	//get the Latitude
@@ -571,8 +573,8 @@ void GPS::parseGGA() {
 	
 	this->getString(ptrTemp, sz, 8);
 	this->_fAltitude = atof(sz);
-	this->convertLatLon();		//convert the lat/lon strings to decimal format
 
+	this->convertLatLon();		//convert the lat/lon strings to decimal format
 }
 
 
@@ -598,6 +600,7 @@ void GPS::getString(char *ptrHaystack, char *ptrFound, int iMaxLength) {
 		i++;
 	}
 }
+
 
 /**
  * @brief   Skips to the next comma or null character in the string.
@@ -763,7 +766,6 @@ bool GPS::isRFBlackoutZone() {
  *            If the position is over the Yemen or North Korea, a 0.000 MHz frequency is returned indicating that no transmissions should be made.
  */
 bool GPS::getAPRSFrequency(char *sz) {
-
 	
 	uint8_t freqSelected = 99;	//Default to 99, which is the International Space Station frequency of 145.825 MHz
 
@@ -809,17 +811,9 @@ bool GPS::getAPRSFrequency(char *sz) {
 		if (iLat >= 500 && iLat <= 2036 && iLon >= 9700 && iLon <= 10600) freqSelected = 8;    //Thailand on 145.5300MHz
 		if (iLat >= 2200 && iLat <= 2230 && iLon >= 11347 && iLon <= 11430) freqSelected = 2;    //Hong Kong on 144.5250MHz
 		if (iLat >= 4900 && iLat <= 6100 && iLon >= -800 && iLon <= 200) freqSelected = 6;    //UK on 144.8000MHz
-
-																											   
-																													   
-
 	}
 
 	switch (freqSelected) {
-		
-					   
-						 
-		
 	case 1:
 		//North America, US, Canada, Mexico
 		strcpy(sz, "144.3900");

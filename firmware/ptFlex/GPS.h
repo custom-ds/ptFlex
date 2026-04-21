@@ -54,7 +54,7 @@ class GPS
     void addChar(char c);
     void getLatitude(char *sz);
     void getLongitude(char *sz);
-	void getWSPRAltitude(uint8_t &CoarseAlt, uint8_t &FineAlt); 
+    void getWSPRAltitude(uint8_t &CoarseAlt, uint8_t &FineAlt); 
     void testWSPRAltitude();
 
    
@@ -103,6 +103,7 @@ class GPS
       if (_bGGAComplete) return (_fAltitude * _METERS_TO_FEET);
       else return 0;
     }
+
     inline float Knots() { 
     	if (_bRMCComplete) return _fKnots;
     	else return 0;
@@ -148,6 +149,7 @@ class GPS
 	  char* skipToNext(char *ptr);
     uint8_t getPinMode(uint8_t pin);
     void convertLatLon();
+	  
 	  
 		// Private variables
     uint8_t _pinGPSRx;

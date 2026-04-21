@@ -4,7 +4,8 @@ setlocal
 echo Changing to avrdude directory...
 cd %appdata%
 
-cd ..\Local\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin
+:: Updated path for Arduino 2.3.8
+cd ..\Local\Arduino15\packages\arduino\tools\avrdude\8.0.0-arduino1\bin
 
 :: Check if COM port was passed as a parameter
 if "%1"=="" (

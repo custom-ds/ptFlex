@@ -414,7 +414,6 @@ void sendPositionSingleLine(bool bISSPath) {
     Aprs.packetHeader(Config.getDestination(), Config.getDestinationSSID(), Config.getCallsign(), Config.getCallsignSSID(), Config.getPath1(), Config.getPath1SSID(), Config.getPath2(), Config.getPath2SSID(), (GPSParser.Altitude() < Config.getDisablePathAboveAltitude()));
   }
   
-
   //      /155146h3842.00N/09655.55WO301/017/A=058239
   uint8_t hh = 0, mm = 0, ss = 0;
   GPSParser.getGPSTime(&hh, &mm, &ss);
@@ -535,7 +534,8 @@ void showVersion() {
  * @brief doConfigMode - This function is used to enter the configuration mode of the tracker. There are diagnostic routines, and the ability to read/write the EEPROM settings.
  * @return void
  */
-void doConfigMode() {
+void doConfigMode()
+{
   byte byTemp;
 
   showVersion();
@@ -544,51 +544,54 @@ void doConfigMode() {
   delay(750);
   Tracker.annunciate('c');
 
-  //keep track of how long we can listen to the GPS
+  // keep track of how long we can listen to the GPS
   unsigned long ulUntil = millis() + 600000;
-  
-  while (millis() < ulUntil ) {
-    //Endless loop. Only exit is to reboot with the 'Q', or after 10 minutes of inactivity
+
+  while (millis() < ulUntil)
+  {
+    // Endless loop. Only exit is to reboot with the 'Q', or after 10 minutes of inactivity
     wdt_reset();
-    if (Serial.available()) {
+    if (Serial.available())
+    {
       byTemp = Serial.read();
 
-
-      if (byTemp == '!') {
+      if (byTemp == '!')
+      {
         showVersion();
       }
 
-      
-      if (byTemp == 'D' || byTemp == 'd') {
-        //used to reset the tracker back to N0CALL defaults
+      if (byTemp == '0')
+      {
+        // used to reset the tracker back to N0CALL defaults
         Serial.println(F("Clear config"));
-        Config.setDefaultConfig();        
+        Config.setDefaultConfig();
         Tracker.annunciate('w');
       }
 
+      if (byTemp == 'E' || byTemp == 'e')
+      {
+        // exercise mode to check out all of the I/O ports
 
-      if (byTemp == 'E' || byTemp == 'e') {
-        //exercise mode to check out all of the I/O ports
-        
         Serial.println(F("Exercise"));
-        
-        Serial.println(F(" annun"));
-        Config.setAnnounceMode(0x03);    //temporarily set the announce mode to both
-        Tracker.annunciate('x');
-        
-        Serial.println(Tracker.readBatteryVoltage(true));
-        GPSParser.collectGPSStrings();   //check the GPS  
-  
-        double insideTemp;    //inside air temp
-        double airPressure;    //millibars
-        char status;
-  
-        airPressure = (double)Pressure.readFloatPressure();
-        airPressure = airPressure / 100;    //convert back to simple airpressure in hPa
-        insideTemp = (double)Pressure.readTempC();
-        //insideTemp = insideTemp / 100;    //convert back to decimal
 
-        if (Config.getI2cBME280()) {
+        Serial.println(F(" annun"));
+        Config.setAnnounceMode(0x03); // temporarily set the announce mode to both
+        Tracker.annunciate('x');
+
+        Serial.println(Tracker.readBatteryVoltage(true));
+        GPSParser.collectGPSStrings(); // check the GPS
+
+        double insideTemp;  // inside air temp
+        double airPressure; // millibars
+        char status;
+
+        airPressure = (double)Pressure.readFloatPressure();
+        airPressure = airPressure / 100; // convert back to simple airpressure in hPa
+        insideTemp = (double)Pressure.readTempC();
+        // insideTemp = insideTemp / 100;    //convert back to decimal
+
+        if (Config.getI2cBME280())
+        {
           Serial.print(F("IAT: "));
           Serial.println(insideTemp);
           Serial.print(F("Press: "));
@@ -596,119 +599,103 @@ void doConfigMode() {
         }
       }
 
+      if (byTemp == 't' || byTemp == 'T')
+      {
+        // Do a long test of the transmitter (useful for spectrum analysis or burn-in testing)
 
-      if (byTemp == 'l' || byTemp == 'L') {
-        //Do a long test of the transmitter (useful for spectrum analysis or burn-in testing)
-        Serial.println(F("Test Xmit"));
-        Serial.println(F("\n1. - 1.5s"));
-        Serial.println(F("2. - 10s"));
-        Serial.println(F("3. - 30s"));
-        Serial.println(F("4. - 60s"));
-
-        while (!Serial.available()) {
-          //Wait for an input
-          wdt_reset();
-        }
-        byTemp = Serial.read();
-
-        if (byTemp >= '1' && byTemp <= '5') {
-          Aprs.setTxFrequency(Config.getRadioFreqTx());    //set the frequency to transmit on
-          Aprs.setRxFrequency(Config.getRadioFreqRx());    //set the frequency to receive on
-          Aprs.setTxDelay(Config.getRadioTxDelay());
-
-          Tracker.annunciate('t');
-          
-          Aprs.PTT(true);   //configures the SA818 as part of the transmit process.
-          switch (byTemp) {
-          case '1':
-            Serial.println(F("1.5s"));
-            delay(1500);
-            break;
-          case '2':
-            Serial.println(F("10s"));
-            delay(10000);
-            break;
-          case '3':
-            Serial.println(F("30s"));
-            delay(30000);
-            break;
-          case '4':
-            Serial.println(F("60s"));
-            delay(60000);
-            break;
-          default:
-            Serial.println(F("Unk"));
-          }
-
-          Aprs.PTT(false);
-        }
-      }
-
-      if (byTemp == 'P' || byTemp == 'p') {
-        //Send a test packet
-        Serial.println(F("Test Packet"));
-        Aprs.setTxFrequency(Config.getRadioFreqTx());    //set the frequency to transmit on
-        Aprs.setRxFrequency(Config.getRadioFreqRx());    //set the frequency to receive on
+        Aprs.setTxFrequency(Config.getRadioFreqTx()); // set the frequency to transmit on
+        Aprs.setRxFrequency(Config.getRadioFreqRx()); // set the frequency to receive on
         Aprs.setTxDelay(Config.getRadioTxDelay());
 
-        Aprs.packetHeader(Config.getDestination(), Config.getDestinationSSID(), Config.getCallsign(), Config.getCallsignSSID(), Config.getPath1(), Config.getPath1SSID(), Config.getPath2(), Config.getPath2SSID(), (GPSParser.Altitude() < Config.getDisablePathAboveAltitude()));
-        Aprs.packetAppend((char *)">Project Traveler Test");
-        Tracker.readBatteryVoltage(true);  //read the battery voltage before the transmission
-        Aprs.packetSend();
-        Tracker.readBatteryVoltage(true);  //read the battery voltage after the transmission
+        Tracker.annunciate('t');
+
+        Aprs.PTT(true); // configures the SA818 as part of the transmit process.
+        uint8_t seconds = 5;
+        if (byTemp == 'T')
+          seconds = 30; // long test
+
+        // Set to plenty of time so that the analyzer can get a fine reading on it
+        for (uint8_t i = 0; i < seconds; i++)
+        {
+          Serial.print(F("."));
+          delay(1000);
+          wdt_reset();
+        }
+        Serial.println("");
+
+        Aprs.PTT(false);
       }
 
+      if (byTemp == 'P' || byTemp == 'p')
+      {
+        // Send a test packet
+        Serial.println(F("Test Packet"));
+        Aprs.setTxFrequency(Config.getRadioFreqTx()); // set the frequency to transmit on
+        Aprs.setRxFrequency(Config.getRadioFreqRx()); // set the frequency to receive on
+        Aprs.setTxDelay(Config.getRadioTxDelay());
 
-      if (byTemp == 'Q' || byTemp == 'q') {
-        //Quit the config mode
+        if (byTemp == 'p')
+        {
+          // Just send an APRS Packet
+          Aprs.packetHeader(Config.getDestination(), Config.getDestinationSSID(), Config.getCallsign(), Config.getCallsignSSID(), Config.getPath1(), Config.getPath1SSID(), Config.getPath2(), Config.getPath2SSID(), (GPSParser.Altitude() < Config.getDisablePathAboveAltitude()));
+          Aprs.packetAppend((char *)">Project Traveler Test");
+          Tracker.readBatteryVoltage(true); // read the battery voltage before the transmission
+          Aprs.packetSend();
+          Tracker.readBatteryVoltage(true); // read the battery voltage after the transmission
+        }
+        else
+        {
+          // 'P' - send a diagnostic string
+          Aprs.sendTestDiagnotics();
+        }
+      }
+
+      if (byTemp == 'Q' || byTemp == 'q')
+      {
+        // Quit the config mode
         reboot();
       }
 
-
-      if (byTemp == 'R' || byTemp == 'r') {
-        Config.readEEPROM();    //pull the configs from eeprom
+      if (byTemp == 'R' || byTemp == 'r')
+      {
+        Config.readEEPROM(); // pull the configs from eeprom
         Config.sendConfigToPC();
 
-        reboot();    //reboot the system while we're waiting for a new config to be loaded
+        reboot(); // reboot the system while we're waiting for a new config to be loaded
       }
 
+      if (byTemp == 'W' || byTemp == 'w')
+      {
+        // take the incoming configs and load them into the Config UDT
 
-      if (byTemp == 'T' || byTemp == 't') {
-        //exercise the transmitter
-        Aprs.setTxFrequency(Config.getRadioFreqTx());    //set the frequency to transmit on
-        Aprs.setRxFrequency(Config.getRadioFreqRx());    //set the frequency to receive on
-        Aprs.setTxDelay(Config.getRadioTxDelay());
-        Aprs.sendTestDiagnotics();
-      }      
+        Serial.println(F("Config mode...")); // NOTE: This wording is critical for the ptConfigurator to know that we're in config mode
 
-
-      if (byTemp == 'W' || byTemp == 'w') {
-        //take the incoming configs and load them into the Config UDT
-
-        Serial.println(F("Config mode..."));    //NOTE: This wording is critical for the ptConfigurator to know that we're in config mode
-
-        if (Config.getConfigFromPC()) {
+        if (Config.getConfigFromPC())
+        {
           Serial.println(F(" loaded"));
 
           Config.writeEEPROM();
           Serial.println(F(" saved"));
 
           Tracker.annunciate('w');
-        } else {
-          //something failed during the read of the config data
+        }
+        else
+        {
+          // something failed during the read of the config data
           Serial.println(F(" failed"));
         }
 
-        reboot();    //reboot the system to apply the new configuration
+        reboot(); // reboot the system to apply the new configuration
       }
 
+      Serial.println("");
       Serial.print(CONFIG_PROMPT);
-      ulUntil = millis() + 600000;    //reset the timer for the config mode
+      ulUntil = millis() + 600000; // reset the timer for the config mode
     }
   }
-  reboot();    //reboot the system if we get here - this is the only way out of the endless loop  
-}
 
+  reboot(); // reboot the system if we get here - this is the only way out of the endless loop
+}
 
 /**
  * @brief reboot - This function reboots the system by resetting the ATmega328P microcontroller.
