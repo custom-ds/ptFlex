@@ -12132,7 +12132,7 @@
 			(net 35 "+5V")
 			(pinfunction "VO")
 			(pintype "power_out")
-			(uuid "2258ae15-34d5-4678-a915-ab57986addbf")
+			(uuid "42038246-8ce2-4f16-9d55-128f900e9e14")
 		)
 		(pad "3" smd roundrect
 			(at -7.65 2.54)
@@ -13296,7 +13296,7 @@
 			(net 1 "GND")
 			(pinfunction "Ext")
 			(pintype "passive")
-			(uuid "3a3ba1c0-6d84-4e32-8bc6-3dfc15689133")
+			(uuid "2677146d-7e40-429b-9090-e334c5d49030")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 -2.54 90)
@@ -13307,7 +13307,7 @@
 			(net 1 "GND")
 			(pinfunction "Ext")
 			(pintype "passive")
-			(uuid "3a3ba1c0-6d84-4e32-8bc6-3dfc15689133")
+			(uuid "c87bfaad-5837-4027-a06d-5b3ef1d883ad")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 2.54 90)
@@ -13318,7 +13318,7 @@
 			(net 1 "GND")
 			(pinfunction "Ext")
 			(pintype "passive")
-			(uuid "3a3ba1c0-6d84-4e32-8bc6-3dfc15689133")
+			(uuid "aa756a2d-a98c-450b-8d2b-9e65568fb33c")
 		)
 		(embedded_fonts no)
 	)
@@ -14286,7 +14286,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 10 "Net-(D1-A)")
 			(pintype "passive")
-			(uuid "6dcc14c7-6f42-490b-a77a-dbe1dc775856")
+			(uuid "b9630694-7a85-410c-903b-f24e8767b813")
 		)
 		(pad "2" smd rect
 			(at 3 5.5 270)
@@ -19502,7 +19502,7 @@
 			(size 1.2 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.208333)
-			(uuid "4979c091-24df-4cec-ad89-1580c5b47e6c")
+			(uuid "c7ae0e7c-470f-40a5-98ad-a1df97138b66")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step"
@@ -20988,6 +20988,15 @@
 		(free yes)
 		(net 1)
 		(uuid "648f93a9-8569-416d-8652-986000d84e44")
+	)
+	(via
+		(at 135.9 113.1)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 1)
+		(uuid "69983133-3733-4930-816d-5a0a95b6c1b7")
 	)
 	(via
 		(at 149.4 70.6)
