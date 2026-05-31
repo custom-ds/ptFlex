@@ -108,7 +108,7 @@ void setup() {
   Tracker.annunciate('k');
 
   //Additional configurations for the APRS Modem
-  Aprs.setDebugLevel(2);
+  Aprs.setDebugLevel(1);
   Aprs.setTxDelay(Config.getRadioTxDelay());
   Aprs.setCourtesyTone(Config.getRadioCourtesyTone());
 
@@ -127,7 +127,7 @@ void setup() {
   }
   
   GPSParser.setDebugNEMA(true);    ///TODO: Need to pull this from Configuration
-  GPSParser.setDebugLevel(2);    //Get full verbose output from the GPS
+  GPSParser.setDebugLevel(1);    //Get full verbose output from the GPS
 }
 
 
