@@ -16,7 +16,7 @@ Before programming for the first time, the ATmega fuses must be set.
  Low:      0xDF
  High:     0xD6
  Extended: 0xFD
-
+ 
 */
 
 
@@ -64,7 +64,7 @@ Before programming for the first time, the ATmega fuses must be set.
 
 
 #define DELAY_MS_BETWEEN_XMITS 1250   //How many MS to delay between subsequent packets (as in between GPGGA and GPRMC strings
-#define INVALID_GPS_DELAY 60000    //Max additional ms to wait for a GPS fix before transmitting anyway
+#define INVALID_GPS_DELAY 50000    //Max additional ms to wait for a GPS fix before transmitting anyway
 #define METERS_TO_FEET 3.2808399
 
 //Debugging options
@@ -206,6 +206,7 @@ void loop() {
     //This is no logic to beacon intervals - just plan old time delays
     msDelay = (unsigned long)Config.getBeaconSimpleDelay() * 1000;    //cast this to unsigned long
     if (!GPSParser.FixValid()) {
+      Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
       msDelay += INVALID_GPS_DELAY;
     }
 
@@ -253,8 +254,11 @@ void loop() {
       }
     } else {
       //No GPS fix - use the high speed delay + GPS fix timeout before transmitting anyway
+      Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
+
       msDelay = (unsigned long)Config.getBeaconSpeedDelayHigh() * 1000;
       if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + INVALID_GPS_DELAY)) {
+        Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
         bXmit = true;
       }
     }
@@ -293,8 +297,11 @@ void loop() {
       }
     } else {
       //No GPS fix - use the low altitude delay + GPS fix timeout before transmitting anyway
+      Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
+
       msDelay = (unsigned long)Config.getBeaconAltitudeDelayLow() * 1000;
       if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + INVALID_GPS_DELAY)) {
+        Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
         bXmit = true;
       }
     }
@@ -302,32 +309,24 @@ void loop() {
     break;
   case 3:
     //Use Time Slotting to determine when to transmit
-    static unsigned long ulSlotTriggeredMillis = 0;
     iSeconds = GPSParser.getGPSSeconds();
 
     if (iSeconds == Config.getBeaconSlot1() || iSeconds == (Config.getBeaconSlot1() + 1) || iSeconds == Config.getBeaconSlot2() || iSeconds == (Config.getBeaconSlot2() + 1)) {
       if (Config.getDelayXmitUntilGPSFix()) {
         if (GPSParser.FixValid()) {
-          bXmit = true;
-          ulSlotTriggeredMillis = 0;
+          bXmit = true;   //have a valid fix, and it's in our slot. Just transmit
         } else {
-          if (ulSlotTriggeredMillis == 0) {
-            ulSlotTriggeredMillis = millis();
-          }
-          Serial.print(F("No GPS - "));
-          if ((millis() - ulSlotTriggeredMillis) > INVALID_GPS_DELAY) {
-            Serial.println(F("Xmit anyway"));
+          //See if we've haven't transmitted within the INVALID_GPS_DELAY time window.  If we haven't, then transmit anyway
+          if ((millis() - Aprs.getLastTransmitMillis()) > INVALID_GPS_DELAY) {
+            Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
             bXmit = true;
-            ulSlotTriggeredMillis = 0;
           } else {
-            Serial.println(F("Delay"));
+            Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT);
           }
         }
       } else {
-        bXmit = true;
+        bXmit = true;   //we don't care about the GPS fix, and it's in our slot. Just transmit
       }
-    } else {
-      ulSlotTriggeredMillis = 0;    //reset when outside the slot window
     }
 
     break;
@@ -347,13 +346,13 @@ void loop() {
           //we don't have a valid GPS fix - Allow up to msDelay + 60s to wait for a fix
 
           if (Config.getDelayXmitUntilGPSFix()) {
-            Serial.print(F("No GPS - "));
+            Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
             if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + INVALID_GPS_DELAY)) {
               //we've waited long enough for a fix - transmit anyway
-              Serial.println(F("Xmit anyway"));
+              Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
               bXmit = true;
             } else {
-              Serial.println(F("Delay"));
+              Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT);
             }
           } else {
             bXmit = true;    //we have a valid GPS fix - transmit
