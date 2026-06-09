@@ -868,9 +868,11 @@ bool GPS::getAPRSFrequency(char *sz) {
  * @note: Returns a 6-character Maidenhead grid square.
  */
 void GPS::getGridSquare(char *sz, uint8_t precision) {
-	Serial.println("");
-	Serial.print(F("GridSq -"));
-	Serial.println(precision);
+	if (this->_debugLevel > 1) {
+		Serial.println("");
+		Serial.print(F("GridSq -"));
+		Serial.println(precision);
+	}
 
 	if (precision != 6) precision = 4;
 
@@ -906,8 +908,10 @@ void GPS::getGridSquare(char *sz, uint8_t precision) {
 
   if (precision == 4) {
     sz[4] = '\0';
-	Serial.println(sz);
-	return;
+
+		if (this->_debugLevel > 0) Serial.println(sz);
+
+		return;
   }
 
   // ----- Subsquare (a-x) -----
@@ -927,7 +931,7 @@ void GPS::getGridSquare(char *sz, uint8_t precision) {
   sz[5] = 'a' + subLat;
   sz[6] = '\0';
 
-  Serial.println(sz);
+  if (this->_debugLevel > 0) Serial.println(sz);
 
 }
 
@@ -946,18 +950,21 @@ void GPS::convertLatLon() {
 	uint32_t min_x10000;
 	uint32_t add_uDeg;
 	uint8_t i;
-Serial.println("");
-Serial.print(F("Lat/Lon "));
-Serial.print(this->_szLatitude);
-Serial.print(F(", "));
-Serial.println(this->_szLongitude);	
+
+	if (this->_debugLevel > 1) {
+		Serial.println("");
+		Serial.print(F("Lat/Lon "));
+		Serial.print(this->_szLatitude);
+		Serial.print(F(", "));
+		Serial.println(this->_szLongitude);	
+	}
 
 
 	if (this->_szLatitude[0] == '\0' || this->_szLongitude[0] == '\0') {
 		//we don't have valid lat/lon strings - just return
 		this->_iLatitude = 0;
 		this->_iLongitude = 0;
-Serial.println(F("!!! INVALID !!!"));
+		Serial.println(F("! INVLD !"));
 		return;
 	}
 
@@ -1027,7 +1034,9 @@ Serial.println(F("!!! INVALID !!!"));
   if (this->_cLongitudeHemi == 'W') 
   	this->_iLongitude = -this->_iLongitude;
 
-Serial.print(this->_iLatitude);
-Serial.print(F(", "));
-Serial.println(this->_iLongitude);
+	if (this->_debugLevel > 1) {
+		Serial.print(this->_iLatitude);
+		Serial.print(F(", "));
+		Serial.println(this->_iLongitude);
+	}
 }

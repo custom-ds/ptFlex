@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 1.0.1 - June 6, 2025 - Added debugMessage() function to allow for debug messages to be sent to the serial port without repeating string literals throughout code
 Version 1.0.0 - March 9, 2025 - Initial Release.
 
 */
@@ -190,4 +191,29 @@ void ptTracker::audioTone(int length) {
     //Set the pins back to inputs to save power
     pinMode(this->_pinLED, INPUT);  
     pinMode(this->_pinPiezo, INPUT);
+}
+
+
+/**
+ * @brief Annunciate a tone on the audio annunciator.
+ * @param length The length of the tone in microseconds.
+ * @note This function is called regardless of whether the audio annunciator is enabled or not, in order to provide consistent timing to the LED annunciator.
+ */
+void ptTracker::debugMessage(DebugMessage message) {
+    wdt_reset();    //reset the watchdog timer
+
+    switch (message) {
+        case DEBUG_GPS_INVALID_LOCK:
+            Serial.println(F("GPS-Invalid"));
+            break;
+        case DEBUG_GPS_LOCK:
+            Serial.println(F("GPS-Lock"));
+            break;
+        case DEBUG_DELAY_XMIT:
+            Serial.println(F("Xmit-Delay"));
+            break;
+        case DEBUG_DELAY_XMIT_CONTINUE:
+            Serial.println(F("Xmit-Continue"));
+            break;
+    }
 }

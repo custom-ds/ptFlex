@@ -29,6 +29,14 @@ You should have received a copy of the GNU General Public License along with thi
 
 class ptTracker {
   public:
+      //Enums for the debugMessages
+    enum DebugMessage {
+        DEBUG_GPS_INVALID_LOCK = 0,
+        DEBUG_GPS_LOCK = 1,
+        DEBUG_DELAY_XMIT = 2,
+        DEBUG_DELAY_XMIT_CONTINUE = 3
+    };
+    
     // Constructor
     ptTracker(uint8_t pinLED, uint8_t pinPiezo, uint8_t pinBattery, uint8_t annunciateMode);
 
@@ -38,6 +46,9 @@ class ptTracker {
     void setAnnunciateMode(uint8_t mode) { this->_annunciateMode = mode; }
     uint8_t getAnnunciateMode() { return this->_annunciateMode; }
     void (*reboot) (void) = 0;    //function pointer to the reboot the Tracker
+    void debugMessage(DebugMessage message);
+
+
 
   private:
     // Private Variables

@@ -16,11 +16,11 @@ Before programming for the first time, the ATmega fuses must be set.
  Low:      0xDF
  High:     0xD6
  Extended: 0xFD
-
+ 
 */
 
 
-#define FIRMWARE_VERSION "1.6.1"
+#define FIRMWARE_VERSION "1.6.2"
 #define CONFIG_PROMPT "\n\n# "
 #include "BoardDef.h"   //defines if this is a ptFlex or ptSolar PCB board
 
@@ -28,8 +28,6 @@ Before programming for the first time, the ATmega fuses must be set.
 #define __PROG_TYPES_COMPAT__
 #include <avr/pgmspace.h>
 #include <avr/wdt.h>
-
-#include "MemoryFree.h"
 
 #include "ptConfig.h"
 #include "Modem.h"
@@ -64,8 +62,9 @@ Before programming for the first time, the ATmega fuses must be set.
 //PC5 is SCL
 //PC6 is reset and not available
 
-//How many MS to delay between subsequent packets (as in between GPGGA and GPRMC strings
-#define DELAY_MS_BETWEEN_XMITS 1250
+
+#define DELAY_MS_BETWEEN_XMITS 1250   //How many MS to delay between subsequent packets (as in between GPGGA and GPRMC strings
+#define INVALID_GPS_DELAY 50000    //Max additional ms to wait for a GPS fix before transmitting anyway
 #define METERS_TO_FEET 3.2808399
 
 //Debugging options
@@ -109,7 +108,7 @@ void setup() {
   Tracker.annunciate('k');
 
   //Additional configurations for the APRS Modem
-  Aprs.setDebugLevel(2);
+  Aprs.setDebugLevel(1);
   Aprs.setTxDelay(Config.getRadioTxDelay());
   Aprs.setCourtesyTone(Config.getRadioCourtesyTone());
 
@@ -128,7 +127,7 @@ void setup() {
   }
   
   GPSParser.setDebugNEMA(true);    ///TODO: Need to pull this from Configuration
-  GPSParser.setDebugLevel(2);    //Get full verbose output from the GPS
+  GPSParser.setDebugLevel(1);    //Get full verbose output from the GPS
 }
 
 
@@ -206,8 +205,12 @@ void loop() {
   case 0:
     //This is no logic to beacon intervals - just plan old time delays
     msDelay = (unsigned long)Config.getBeaconSimpleDelay() * 1000;    //cast this to unsigned long
-    
-     if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+    if (!GPSParser.FixValid()) {
+      Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
+      msDelay += INVALID_GPS_DELAY;
+    }
+
+    if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
       //we've waited long enough - transmit
       bXmit = true;
     }
@@ -216,35 +219,46 @@ void loop() {
   case 1:
     //This is for Speed-based beaconing
 
-    fSpeed = GPSParser.Knots();        //get the current speed
-    if (fSpeed > fMaxSpeed) fMaxSpeed = fSpeed;
+    if (GPSParser.FixValid()) {
+      fSpeed = GPSParser.Knots();        //get the current speed
+      if (fSpeed > fMaxSpeed) fMaxSpeed = fSpeed;
 
-    if (fMaxSpeed < Config.getBeaconSpeedThreshLow()) {
-      //we're in the slow range
-      msDelay = (unsigned long)Config.getBeaconSpeedDelayLow() * 1000;    //cast this to unsigned long
-      
-      if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
-        //we've waited long enough for this speed - transmit
-        bXmit = true;
+      if (fMaxSpeed < Config.getBeaconSpeedThreshLow()) {
+        //we're in the slow range
+        msDelay = (unsigned long)Config.getBeaconSpeedDelayLow() * 1000;    //cast this to unsigned long
+
+        if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+          //we've waited long enough for this speed - transmit
+          bXmit = true;
+        }
       }
-    }
 
-    if (fSpeed >= Config.getBeaconSpeedThreshLow() && fSpeed < Config.getBeaconSpeedThreshHigh()) {
-      //we're in the medium range
-      msDelay = (unsigned long)Config.getBeaconSpeedDelayMid() * 1000;    //cast this to unsigned long
-      
-      if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
-        //we've waited long enough for this speed - transmit
-        bXmit = true;
+      if (fSpeed >= Config.getBeaconSpeedThreshLow() && fSpeed < Config.getBeaconSpeedThreshHigh()) {
+        //we're in the medium range
+        msDelay = (unsigned long)Config.getBeaconSpeedDelayMid() * 1000;    //cast this to unsigned long
+
+        if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+          //we've waited long enough for this speed - transmit
+          bXmit = true;
+        }
       }
-    }
 
-    if (fSpeed >= Config.getBeaconSpeedThreshHigh()) {
-      //we're in the fast range
-      msDelay = (unsigned long)Config.getBeaconSpeedDelayHigh() * 1000;    //cast this to unsigned long
-      
-      if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
-        //we've waited long enough for this speed - transmit
+      if (fSpeed >= Config.getBeaconSpeedThreshHigh()) {
+        //we're in the fast range
+        msDelay = (unsigned long)Config.getBeaconSpeedDelayHigh() * 1000;    //cast this to unsigned long
+
+        if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+          //we've waited long enough for this speed - transmit
+          bXmit = true;
+        }
+      }
+    } else {
+      //No GPS fix - use the high speed delay + GPS fix timeout before transmitting anyway
+      Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
+
+      msDelay = (unsigned long)Config.getBeaconSpeedDelayHigh() * 1000;
+      if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + INVALID_GPS_DELAY)) {
+        Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
         bXmit = true;
       }
     }
@@ -253,30 +267,41 @@ void loop() {
   case 2:
     //This is for Altitude-based beaconing
 
-    if (fCurrentAlt < Config.getBeaconAltitudeThreshLow()) {
-      //we're in the low phase of the flight - we'll typically send packets more frequently close to the ground
-      msDelay = (unsigned long)Config.getBeaconAltitudeDelayLow() * 1000;    //cast this to unsigned long
-      
-      if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
-        //we've waited long enough for this speed - transmit
-        bXmit = true;
+    if (GPSParser.FixValid()) {
+      if (fCurrentAlt < Config.getBeaconAltitudeThreshLow()) {
+        //we're in the low phase of the flight - we'll typically send packets more frequently close to the ground
+        msDelay = (unsigned long)Config.getBeaconAltitudeDelayLow() * 1000;    //cast this to unsigned long
+
+        if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+          //we've waited long enough for this speed - transmit
+          bXmit = true;
+        }
       }
-    }
-    if (fCurrentAlt >= Config.getBeaconAltitudeThreshLow() && fCurrentAlt < Config.getBeaconAltitudeThreshHigh()) {
-      //we're in the mid-phase of the flight.  We'll transmit regularly in here
-      msDelay = (unsigned long)Config.getBeaconAltitudeDelayMid() * 1000;    //cast this to unsigned long
-      
-      if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
-        //we've waited long enough for this speed - transmit
-        bXmit = true;
+      if (fCurrentAlt >= Config.getBeaconAltitudeThreshLow() && fCurrentAlt < Config.getBeaconAltitudeThreshHigh()) {
+        //we're in the mid-phase of the flight.  We'll transmit regularly in here
+        msDelay = (unsigned long)Config.getBeaconAltitudeDelayMid() * 1000;    //cast this to unsigned long
+
+        if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+          //we've waited long enough for this speed - transmit
+          bXmit = true;
+        }
       }
-    }
-    if (fCurrentAlt >= Config.getBeaconAltitudeThreshHigh()) {
-      //we're in the top-phase of the flight.  Transmit more frequenly to get better burst resolution?
-      msDelay = (unsigned long)Config.getBeaconAltitudeDelayHigh() * 1000;    //cast this to unsigned long
-      
-      if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
-        //we've waited long enough for this speed - transmit
+      if (fCurrentAlt >= Config.getBeaconAltitudeThreshHigh()) {
+        //we're in the top-phase of the flight.  Transmit more frequenly to get better burst resolution?
+        msDelay = (unsigned long)Config.getBeaconAltitudeDelayHigh() * 1000;    //cast this to unsigned long
+
+        if ((millis() - Aprs.getLastTransmitMillis()) > msDelay) {
+          //we've waited long enough for this speed - transmit
+          bXmit = true;
+        }
+      }
+    } else {
+      //No GPS fix - use the low altitude delay + GPS fix timeout before transmitting anyway
+      Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
+
+      msDelay = (unsigned long)Config.getBeaconAltitudeDelayLow() * 1000;
+      if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + INVALID_GPS_DELAY)) {
+        Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
         bXmit = true;
       }
     }
@@ -287,7 +312,21 @@ void loop() {
     iSeconds = GPSParser.getGPSSeconds();
 
     if (iSeconds == Config.getBeaconSlot1() || iSeconds == (Config.getBeaconSlot1() + 1) || iSeconds == Config.getBeaconSlot2() || iSeconds == (Config.getBeaconSlot2() + 1)) {
-      bXmit = true;
+      if (Config.getDelayXmitUntilGPSFix()) {
+        if (GPSParser.FixValid()) {
+          bXmit = true;   //have a valid fix, and it's in our slot. Just transmit
+        } else {
+          //See if we've haven't transmitted within the INVALID_GPS_DELAY time window.  If we haven't, then transmit anyway
+          if ((millis() - Aprs.getLastTransmitMillis()) > INVALID_GPS_DELAY) {
+            Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
+            bXmit = true;
+          } else {
+            Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT);
+          }
+        }
+      } else {
+        bXmit = true;   //we don't care about the GPS fix, and it's in our slot. Just transmit
+      }
     }
 
     break;
@@ -307,13 +346,13 @@ void loop() {
           //we don't have a valid GPS fix - Allow up to msDelay + 60s to wait for a fix
 
           if (Config.getDelayXmitUntilGPSFix()) {
-            Serial.print(F("No GPS - "));
-            if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + 60000)) {
+            Tracker.debugMessage(ptTracker::DEBUG_GPS_INVALID_LOCK);
+            if ((millis() - Aprs.getLastTransmitMillis()) > (msDelay + INVALID_GPS_DELAY)) {
               //we've waited long enough for a fix - transmit anyway
-              Serial.println(F("Xmit anyway"));
+              Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT_CONTINUE);
               bXmit = true;
             } else {
-              Serial.println(F("Delay"));
+              Tracker.debugMessage(ptTracker::DEBUG_DELAY_XMIT);
             }
           } else {
             bXmit = true;    //we have a valid GPS fix - transmit
@@ -373,12 +412,6 @@ void loop() {
       Tracker.annunciate('l');
     }
   }
-
-  //see if we're tracking free memory (debugging)
-  #ifdef  MEMORY_FREE_H
-    // Serial.print(F("Mem: "));
-    // Serial.println(freeMemory());
-  #endif  
 }
 
 

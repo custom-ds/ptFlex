@@ -11,6 +11,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Version History:
+Version 1.1.3 - May 31, 2026 - Fixed an issue where the Hourly Reboot and Delay for GPS Fix parameters were being read in the wrong order.
 Version 1.1.2 - April 11, 2026 - Fixed potential buffer overfow issue with the status message.
 Version 1.1.1 - July 20, 2025 - Synchronized the ptFlex and ptSolar code bases to be parameterized by the TRACKER_PTFLEX and TRACKER_PTSOLAR defines.
 Version 1.1.0 - July 12, 2025 - Updated to PT0101 configuration format, which simplied a few unused parameters.
@@ -353,18 +354,17 @@ void ptConfig::readConfigParam(char *szParam, int iMaxLen) {
           this->_config.I2cBME280 = szParam[0] == '1';
 
 
-
           //Disable GPS during transmission
           this->readConfigParam(szParam, sizeof(szParam));
           this->_config.DisableGPSDuringXmit = szParam[0] == '1';    //Disable the GPS during transmission
 
-          this->readConfigParam(szParam, sizeof(szParam));
-          this->_config.DelayXmitUntilGPSFix = szParam[0] == '1';   //Delay up to 50 seconds for a GPS fix before transmitting 
-
           //Hourly Reboot
           this->readConfigParam(szParam, sizeof(szParam));
           this->_config.HourlyReboot = szParam[0] == '1';    //Reboot the system every hour
-    
+
+          //Delay for GPS fix before transmitting
+          this->readConfigParam(szParam, sizeof(szParam));
+          this->_config.DelayXmitUntilGPSFix = szParam[0] == '1';   //Delay up to 50 seconds for a GPS fix before transmitting 
 
 
           unsigned int iCheckSum = 0;
@@ -541,7 +541,9 @@ void ptConfig::readConfigParam(char *szParam, int iMaxLen) {
     else Serial.write("0");
     Serial.write(0x09);
 
-    Serial.print(this->_config.DelayXmitUntilGPSFix, DEC);
+    //Delay for GPS fix before transmitting
+    if (this->_config.DelayXmitUntilGPSFix) Serial.write("1");
+    else Serial.write("0");
     Serial.write(0x04);      //End of string
 
     wdt_reset();    //reset the watchdog timer
